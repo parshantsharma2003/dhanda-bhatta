@@ -554,9 +554,14 @@ async function runTestSuite() {
       headers: adminHeaders,
       body: JSON.stringify({
         data: {
-          heroHeadline: "DHANDA BHATTA COMPANY - TRADITIONAL RED CLAY BRICKS",
-          heroDescription: "Verified published headline for testing.",
-          heroTagline: "VILLAGE KALWA • JIND • HARYANA",
+          heroTagline: "BRICK MANUFACTURER | JIND, HARYANA",
+          heroHeadline: "Bricks made for stronger foundations.",
+          heroDescription: "Quality red clay bricks manufactured in Village Kalwa, Pillukhera. Direct kiln supply and batch delivery across nearby areas.",
+          primaryCtaText: "Explore Our Bricks",
+          primaryCtaLink: "/products",
+          secondaryCtaText: "Contact Our Team",
+          secondaryCtaLink: "/contact",
+          bannerImageUrl: "/images/facility/kiln-hero.jpg",
         },
         publish: true,
       }),
@@ -573,8 +578,8 @@ async function runTestSuite() {
       headers: adminHeaders,
       body: JSON.stringify({
         data: {
-          heritageHeading: "Three Decades of Kiln Heritage in Kalwa",
-          heritageStory: "Dhanda Bhatta Company heritage testing story.",
+          heritageHeading: "Building with Quality. Delivering with Trust.",
+          heritageStory: "Dhanda Bhatta Company is an established brick manufacturing and supply business located in Village Kalwa, near Pillukhera in District Jind, Haryana. We supply quality red clay bricks for durable residential, agricultural, and commercial construction projects throughout Jind and surrounding areas.",
         },
         publish: true,
       }),

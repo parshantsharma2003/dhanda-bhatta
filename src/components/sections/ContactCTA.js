@@ -9,24 +9,7 @@ export default function ContactCTA() {
   )}`;
 
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-charcoal text-white relative overflow-hidden">
-      {/* Subtle architectural background texture */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(#F6F3ED 1px, transparent 1px), linear-gradient(to right, #F6F3ED 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Terracotta glow gradient */}
-      <div
-        className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#963D32]/25 blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-
+    <section className="py-14 sm:py-20 lg:py-24 bg-charcoal text-white relative overflow-hidden border-b border-charcoal-muted">
       <PageContainer className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Main Text Content */}

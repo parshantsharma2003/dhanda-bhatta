@@ -38,22 +38,23 @@ export default async function ProductsPage() {
       <PageHero
         badge="Brick Catalogue"
         title="Bricks for Every Construction Need"
-        description="Clay bricks manufactured for residential walls, commercial frames, and foundation works. Explore our sample offerings below."
+        description="Red clay bricks manufactured for residential, commercial, and foundation works. Direct kiln supply across Jind and nearby areas."
         breadcrumbs={[{ label: "Products" }]}
       />
 
       <section className="py-12 sm:py-16 bg-white border-b border-border-subtle">
         <PageContainer>
-          {/* Sample Catalogue Notice Banner */}
-          <div className="mb-8 p-4 sm:p-5 bg-warm-bg border-l-4 border-sandstone border-y border-r border-border-subtle flex items-start gap-3.5 text-xs sm:text-sm text-secondary-text">
-            <Info className="w-5 h-5 text-sandstone shrink-0 mt-0.5" />
+          {/* Commercial Supply & Batch Availability Note */}
+          <div className="mb-8 p-4 sm:p-5 bg-warm-bg border-l-4 border-terracotta border-y border-r border-border-subtle flex items-start gap-3.5 text-xs sm:text-sm text-secondary-text">
+            <Info className="w-5 h-5 text-terracotta shrink-0 mt-0.5" />
             <div className="space-y-1">
               <strong className="text-charcoal font-semibold block">
-                Catalogue Status Notice:
+                Batch Availability &amp; Delivery:
               </strong>
               <p>
-                {productNotice.disclaimer} To discuss live batch availability or place a custom order,
-                please contact our dispatch desk directly.
+                All brick varieties are manufactured directly at our kiln in Village Kalwa. Batch sizes
+                from tractor trolley loads to multi-axle truck dispatches are coordinated across Jind
+                and surrounding areas.
               </p>
             </div>
           </div>

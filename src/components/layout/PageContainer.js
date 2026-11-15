@@ -21,7 +21,7 @@ export default function PageContainer({
   return (
     <Component
       className={cn(
-        "w-full mx-auto px-4 sm:px-6 lg:px-8",
+        "w-full mx-auto px-5 sm:px-6 lg:px-8",
         sizeClasses[size] || sizeClasses.default,
         className
       )}

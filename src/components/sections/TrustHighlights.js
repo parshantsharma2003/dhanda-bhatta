@@ -6,22 +6,25 @@ export default function TrustHighlights() {
     {
       icon: Layers,
       title: "Brick Manufacturing",
-      description: "Traditional red clay brick manufacturing facility based in Village Kalwa, Pillukhera.",
+      description:
+        "Red clay brick manufacturing facility established in Village Kalwa, near Dharoli Gausala, Pillukhera.",
     },
     {
       icon: ShieldCheck,
       title: "Quality-focused Production",
-      description: "Carefully selected alluvial clay, disciplined sun-curing, and continuous kiln firing.",
+      description:
+        "Consistent batch firing, sharp dimensional edges, and thorough inspection for structural strength.",
     },
     {
       icon: Truck,
       title: "Nearby Area Delivery",
-      description: "Direct transport arrangements to building sites across Jind and surrounding areas.",
+      description:
+        "Direct vehicle transport arrangements to residential and commercial sites across Jind and nearby areas.",
     },
   ];
 
   return (
-    <section className="bg-white border-b border-border-subtle py-8 sm:py-10">
+    <section className="bg-white border-b border-border-subtle py-6 sm:py-8">
       <PageContainer>
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border-subtle">
           {highlights.map((item, index) => {
@@ -29,19 +32,19 @@ export default function TrustHighlights() {
             return (
               <div
                 key={item.title}
-                className={`flex items-start gap-4 ${
+                className={`flex items-start gap-3.5 ${
                   index === 0
-                    ? "pb-6 md:pb-0 md:pr-6"
+                    ? "pb-5 md:pb-0 md:pr-6"
                     : index === 1
-                    ? "py-6 md:py-0 md:px-6"
-                    : "pt-6 md:pt-0 md:pl-6"
+                    ? "py-5 md:py-0 md:px-6"
+                    : "pt-5 md:pt-0 md:pl-6"
                 }`}
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 border border-sandstone/50 bg-warm-bg flex items-center justify-center text-terracotta shrink-0">
-                  <Icon className="w-5 h-5" strokeWidth={1.75} />
+                <div className="w-9 h-9 border border-sandstone/50 bg-warm-bg flex items-center justify-center text-terracotta shrink-0">
+                  <Icon className="w-4 h-4" strokeWidth={1.75} />
                 </div>
-                <div className="space-y-1">
-                  <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal">
+                <div className="space-y-0.5">
+                  <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal tracking-tight">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-secondary-text leading-relaxed">

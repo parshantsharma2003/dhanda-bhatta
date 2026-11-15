@@ -16,9 +16,9 @@ export default async function ProductShowcase() {
       <PageContainer>
         {/* Section Heading */}
         <SectionHeading
-          overline="Product Offerings"
+          overline="Product Catalogue"
           title="Bricks for Every Construction Need"
-          description="Clay bricks manufactured for residential walls, commercial frames, and foundation works. Explore our sample offerings below."
+          description="Kiln-fired red clay bricks manufactured for residential walls, commercial frames, and foundation works."
           align="split"
           action={
             <Button href="/products" variant="outline" iconRight={ArrowRight}>
@@ -27,15 +27,6 @@ export default async function ProductShowcase() {
           }
           className="mb-8 sm:mb-12"
         />
-
-        {/* Sample Catalogue Notice Banner */}
-        <div className="mb-8 p-3.5 sm:p-4 bg-warm-bg border border-border-subtle flex items-start gap-3 text-xs text-secondary-text">
-          <Info className="w-4 h-4 text-sandstone shrink-0 mt-0.5" />
-          <div>
-            <strong className="text-charcoal font-semibold">Catalogue Notice: </strong>
-            {productNotice.disclaimer}
-          </div>
-        </div>
 
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

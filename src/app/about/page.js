@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, ShieldCheck, CheckCircle2, ArrowRight, Layers, Flame, Hammer } from "lucide-react";
 import PageContainer from "@/components/layout/PageContainer";
 import PageHero from "@/components/ui/PageHero";
@@ -17,7 +18,7 @@ export const dynamic = "force-dynamic";
 export const metadata = generatePageMetadata({
   title: "About Our Bhatta | Brick Manufacturing in Kalwa, Jind",
   description:
-    "Learn about Dhanda Bhatta Company, our clay brick manufacturing facility in Village Kalwa, near Dharoli Gausala, Pillukhera, Jind, Haryana, and our focus on product quality and direct delivery.",
+    "Learn about Dhanda Bhatta Company, our brick manufacturing facility in Village Kalwa, near Dharoli Gausala, Pillukhera, Jind, Haryana, and our focus on product quality and direct delivery.",
   path: "/about",
   keywords: [
     "Dhanda Bhatta Company Kalwa",
@@ -31,75 +32,63 @@ export default async function AboutPage() {
   const aboutCms = await getCmsContent("about");
   const breadcrumbLd = generateBreadcrumbSchema([{ name: "About Us", url: "/about" }]);
 
-  const qualityPillars = aboutCms?.values?.length
-    ? aboutCms.values.map((v) => ({
-        icon: ShieldCheck,
-        title: v.title,
-        description: v.description,
-      }))
-    : [
-        {
-          icon: Layers,
-          title: "Regional Alluvial Clay Selection",
-          description:
-            "We source regional alluvial soil from the Kalwa agricultural basin, allowing the clay to weather naturally so it moulds cleanly with minimal internal voids.",
-        },
-        {
-          icon: Flame,
-          title: "Disciplined Kiln Firing",
-          description:
-            "Bricks are fired through continuous trench kiln cycles, sintering the clay into durable, weather-resilient terracotta masonry units.",
-        },
-        {
-          icon: Hammer,
-          title: "Batch Sorting & Ring Inspection",
-          description:
-            "Every batch drawn from our chambers is sorted for true shape, uniform color, and the resonant metallic ringing sound of well-burnt clay.",
-        },
-        {
-          icon: ShieldCheck,
-          title: "Direct Kiln Relationship",
-          description:
-            "We deal directly with home builders, civil contractors, and project managers from our facility gate without third-party dealer markups.",
-        },
-      ];
+  const qualityPillars = [
+    {
+      icon: Layers,
+      title: "Quality Clay Preparation",
+      description:
+        "Selecting suitable regional clay conditioned to mould cleanly, ensuring uniform density and sound structural integrity.",
+    },
+    {
+      icon: Flame,
+      title: "Controlled Kiln Firing",
+      description:
+        "Thorough kiln firing hardens clay units into durable, weather-resistant masonry bricks with dependable compressive strength.",
+    },
+    {
+      icon: Hammer,
+      title: "Batch Sorting & Inspection",
+      description:
+        "Each batch is sorted at the kiln yard to ensure consistent dimensional accuracy, clean edges, and proper ringing sound.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Direct Kiln Relationship",
+      description:
+        "Direct communication with builders, homeowners, and contractors for transparent pricing and reliable delivery coordination.",
+    },
+  ];
 
   const workingStages = [
     {
       stage: "01",
-      title: "Soil Sourcing & Weathering",
+      title: "Clay Preparation & Pugging",
       description:
-        "Selecting suitable agrarian clay and exposing it to ambient conditions to break down clods and condition the soil for pugging.",
+        "Preparing quality regional soil with water to achieve optimal plasticity for uniform brick shaping.",
     },
     {
       stage: "02",
-      title: "Kneading & Moulding",
+      title: "Moulding & Shaping",
       description:
-        "Mixing tempered soil with water in mechanical pugging mills to achieve uniform plasticity before shaping bricks into true rectangular moulds.",
+        "Forming green bricks using true rectangular moulds for sharp corners and standard construction dimensions.",
     },
     {
       stage: "03",
-      title: "Open-Air Shade Curing",
+      title: "Natural Air Drying",
       description:
-        "Stacking green bricks into elongated shaded drying hacks so moisture evaporates steadily, preventing premature drying fissures.",
+        "Stacking green bricks in open-air drying hacks to steadily remove moisture before kiln loading.",
     },
     {
       stage: "04",
-      title: "Continuous Kiln Firing & Cooling",
+      title: "Kiln Firing & Batch Dispatch",
       description:
-        "Arranging cured bricks inside the continuous kiln circuit where regulated thermal currents fire and slowly cool each chamber.",
-    },
-    {
-      stage: "05",
-      title: "Yard Stacking & Site Dispatch",
-      description:
-        "Carefully organizing finished bricks into segregated piles in the stockyard, ready for vehicle loading and transport to nearby building plots.",
+        "Firing bricks in the kiln to full hardness, followed by sorting in the stockyard for direct site delivery.",
     },
   ];
 
   const contactReasons = [
     "Check live brick batch availability directly at the kiln gate.",
-    "Discuss brick requirements for residential homes, commercial plazas, and agricultural boundaries.",
+    "Discuss brick requirements for residential homes, commercial buildings, and boundary walls.",
     "Coordinate direct vehicle dispatch and scheduling to your building plot in nearby areas.",
     "Visit the facility in Village Kalwa to inspect currently stacked batches in person.",
   ];
@@ -116,7 +105,7 @@ export default async function AboutPage() {
       <PageHero
         badge="About Dhanda Bhatta Company"
         title="Building with Quality. Delivering with Trust."
-        description="Dhanda Bhatta Company is a dedicated brick manufacturing and supply business located in Village Kalwa, near Pillukhera in District Jind, Haryana."
+        description="Dhanda Bhatta Company is an established brick manufacturing and supply business located in Village Kalwa, near Pillukhera in District Jind, Haryana."
         breadcrumbs={[{ label: "About Our Bhatta" }]}
       />
 
@@ -127,8 +116,8 @@ export default async function AboutPage() {
             <div className="lg:col-span-7 space-y-5">
               <SectionHeading
                 overline="Our Business"
-                title="Traditional Brickmaking in the Heart of Haryana"
-                description="Rooted in the agrarian plains of Jind, our bhatta operates on straightforward principles: solid raw clay, disciplined continuous firing, and dependable customer service."
+                title="Traditional Brickmaking in Jind, Haryana"
+                description="Rooted in Village Kalwa, our bhatta operates on straightforward principles: quality raw material, controlled firing, and dependable customer service."
               />
 
               <div className="space-y-4 text-sm sm:text-base text-secondary-text leading-relaxed">
@@ -137,14 +126,13 @@ export default async function AboutPage() {
                 ) : (
                   <>
                     <p>
-                      Dhanda Bhatta Company was established to supply quality red clay bricks to builders,
-                      contractors, and families constructing homes across Kalwa, Pillukhera, Jind, and
-                      surrounding regions.
+                      Dhanda Bhatta Company supplies quality red clay bricks to builders, contractors,
+                      and homeowners constructing durable structures across Kalwa, Pillukhera, Jind,
+                      and surrounding areas.
                     </p>
                     <p>
-                      Clay bricks remain one of the most reliable and enduring building materials in northern
-                      India. Their natural thermal mass keeps interiors comfortable through harsh summer heat and
-                      winter cold, while their mineral durability resists weathering decade after decade.
+                      Kiln-fired clay bricks remain the preferred foundation and structural material across
+                      northern India, offering natural thermal insulation, weather resilience, and lasting strength.
                     </p>
                   </>
                 )}
@@ -162,38 +150,24 @@ export default async function AboutPage() {
               </div>
             </div>
 
-            {/* Right Media Area for Actual Bhatta Photography */}
+            {/* Right: Large Genuine Bhatta Photograph */}
             <div className="lg:col-span-5">
-              <div className="border border-border-strong bg-warm-bg p-4 sm:p-5 shadow-xs relative">
-                <div className="aspect-4/3 w-full bg-[#E5DEC7] border border-border-subtle flex flex-col justify-between p-5 overflow-hidden">
-                  <div className="flex items-center justify-between text-[11px] text-secondary-text">
-                    <Badge variant="terracotta" size="sm">
-                      Bhatta Facility
-                    </Badge>
-                    <span>Village Kalwa</span>
-                  </div>
-
-                  <div className="my-auto text-center py-4">
-                    <div className="w-12 h-12 mx-auto mb-2 bg-white border border-border-subtle flex items-center justify-center text-terracotta shadow-2xs">
-                      <Layers className="w-6 h-6" />
-                    </div>
-                    <h2 className="font-heading font-bold text-sm sm:text-base text-charcoal">
-                      Continuous Kiln Operations
-                    </h2>
-                    <p className="text-xs text-secondary-text mt-1 max-w-xs mx-auto">
-                      Field media placeholder ready for confirmed facility photographs
-                    </p>
-                  </div>
-
-                  <div className="text-[10px] text-secondary-text border-t border-border-subtle pt-1 flex justify-between">
-                    <span>Dhanda Bhatta Company</span>
-                    <span className="text-terracotta font-medium">Kalwa, Pillukhera</span>
-                  </div>
+              <div className="relative aspect-[4/3] w-full overflow-hidden border border-border-subtle shadow-sm bg-warm-bg">
+                <Image
+                  src="/images/facility/kiln-hero.jpg"
+                  alt="Dhanda Bhatta Company brick kiln chimney and loading yard at Village Kalwa, Jind"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent pointer-events-none"
+                  aria-hidden="true"
+                />
+                <div className="absolute bottom-3 left-3 right-3 text-[11px] text-white/90 bg-charcoal/85 backdrop-blur-xs px-3 py-1.5 flex items-center justify-between border border-white/10">
+                  <span className="font-heading font-medium tracking-wide">Kiln Operations</span>
+                  <span className="text-sandstone-light">Village Kalwa, Pillukhera</span>
                 </div>
-
-                <p className="pt-3 text-xs text-secondary-text text-center">
-                  Kiln yard and dispatch area in Village Kalwa, Jind
-                </p>
               </div>
             </div>
           </div>
@@ -206,7 +180,7 @@ export default async function AboutPage() {
           <SectionHeading
             overline="Quality Focus"
             title="Our Approach to Product Quality"
-            description="We focus on four fundamental aspects of clay brick manufacturing to ensure every batch delivered is sound and dependable."
+            description="We focus on essential brickmaking standards to ensure every delivered batch meets durable construction requirements."
             className="mb-12"
           />
 
@@ -220,7 +194,7 @@ export default async function AboutPage() {
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-heading font-bold text-sandstone uppercase tracking-widest block">
-                      Pillar 0{idx + 1}
+                      Standard 0{idx + 1}
                     </span>
                     <h3 className="font-heading font-bold text-base text-charcoal">
                       {pillar.title}
@@ -241,12 +215,12 @@ export default async function AboutPage() {
         <PageContainer>
           <SectionHeading
             overline="Process &amp; Operations"
-            title="Our Facilities and Working Process"
-            description="The step-by-step brickmaking journey from raw clay pugging to cooling chamber sorting."
+            title="Operational Workflow"
+            description="Our primary stages from clay preparation to finished batch dispatch."
             className="mb-12"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {workingStages.map((stage) => (
               <div
                 key={stage.stage}
@@ -277,7 +251,7 @@ export default async function AboutPage() {
               <SectionHeading
                 overline="Customer Service"
                 title="Why Customers Can Contact Us"
-                description="Whether you are beginning foundation work for a private home or managing a commercial building contract, we are available to help you plan your brick requirements."
+                description="Whether you are beginning foundation work for a home or managing a commercial contract, we are available to assist with your brick supply."
               />
 
               <div className="space-y-3 pt-2">

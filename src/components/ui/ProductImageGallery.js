@@ -58,14 +58,12 @@ export default function ProductImageGallery({ images = [], productName = "Brick 
             {/* Top Badges */}
             <div className="flex items-center justify-between text-xs z-10">
               <Badge variant="subtle" size="sm" className="bg-white/90">
-                Field Media Frame
+                Red Clay Masonry
               </Badge>
 
-              {currentImage.isPlaceholder && (
-                <span className="text-[10px] font-heading uppercase tracking-wider text-secondary-text bg-white/90 px-2 py-0.5 border border-border-subtle">
-                  Placeholder Slot
-                </span>
-              )}
+              <span className="text-[10px] font-heading uppercase tracking-wider text-secondary-text bg-white/90 px-2 py-0.5 border border-border-subtle">
+                Kiln Supply
+              </span>
             </div>
 
             {/* Center Graphic */}

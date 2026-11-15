@@ -33,7 +33,7 @@ export default function SectionHeading({
           )}
           <HeadingTag
             className={cn(
-              "font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-charcoal",
+              "font-heading text-[26px] sm:text-3xl md:text-4xl font-extrabold tracking-tight text-charcoal leading-tight",
               titleClassName
             )}
           >
@@ -73,7 +73,7 @@ export default function SectionHeading({
       )}
       <HeadingTag
         className={cn(
-          "font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-charcoal",
+          "font-heading text-[26px] sm:text-3xl md:text-4xl font-extrabold tracking-tight text-charcoal leading-tight",
           titleClassName
         )}
       >

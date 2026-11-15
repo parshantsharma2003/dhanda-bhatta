@@ -6,7 +6,7 @@ import { analyticsEvents } from "@/lib/analytics";
 
 /**
  * Mobile Contact Bar & Desktop Floating Actions
- * Mobile: Fixed bottom bar with Call, WhatsApp, Directions (safe-area aware, min 48px target).
+ * Mobile: Fixed bottom bar with Call, WhatsApp, Directions (~68-72px, safe-area aware, min 48px touch targets).
  * Desktop: Compact, unobtrusive floating contact actions dock.
  */
 export default function MobileContactBar() {
@@ -18,19 +18,19 @@ export default function MobileContactBar() {
     <>
       {/* 1. Mobile Fixed Bottom Contact Bar (< 1024px) */}
       <aside
-        className="fixed bottom-0 inset-x-0 z-30 lg:hidden bg-white/95 backdrop-blur-md border-t border-border-subtle shadow-xl pb-[env(safe-area-inset-bottom,0px)]"
+        className="fixed bottom-0 inset-x-0 z-30 lg:hidden bg-white/98 backdrop-blur-md border-t border-border-strong shadow-[0_-4px_16px_rgba(37,35,33,0.08)] pb-[env(safe-area-inset-bottom,0px)]"
         aria-label="Quick Contact Bar"
       >
-        <div className="grid grid-cols-3 divide-x divide-border-subtle max-w-lg mx-auto">
+        <div className="grid grid-cols-3 divide-x divide-border-subtle max-w-md mx-auto">
           {/* Action 1: Call */}
           <a
             href={`tel:${siteConfig.contact.primaryPhone}`}
             onClick={() => analyticsEvents.phoneClick("mobile_bottom_bar")}
-            className="flex flex-col items-center justify-center py-2 px-1 min-h-[52px] text-charcoal hover:bg-warm-bg active:bg-terracotta-tint transition-colors focus-visible:outline-2 focus-visible:outline-terracotta"
+            className="flex flex-col items-center justify-center py-2.5 px-1 min-h-[66px] text-charcoal hover:bg-warm-bg active:bg-[#963D32]/10 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
             aria-label={`Call Dhanda Bhatta Company at ${siteConfig.contact.primaryPhoneDisplay}`}
           >
-            <Phone className="w-4 h-4 text-terracotta mb-0.5" />
-            <span className="text-[11px] font-heading font-semibold tracking-tight">Call</span>
+            <Phone className="w-5 h-5 text-terracotta mb-1" strokeWidth={2} />
+            <span className="text-xs font-heading font-bold tracking-tight text-charcoal">Call</span>
           </a>
 
           {/* Action 2: WhatsApp */}
@@ -39,11 +39,11 @@ export default function MobileContactBar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => analyticsEvents.whatsappClick("mobile_bottom_bar")}
-            className="flex flex-col items-center justify-center py-2 px-1 min-h-[52px] text-charcoal hover:bg-warm-bg active:bg-sandstone-tint transition-colors focus-visible:outline-2 focus-visible:outline-terracotta"
+            className="flex flex-col items-center justify-center py-2.5 px-1 min-h-[66px] text-charcoal hover:bg-warm-bg active:bg-[#2E7D32]/10 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
             aria-label="Chat with Dhanda Bhatta Company on WhatsApp"
           >
-            <MessageSquare className="w-4 h-4 text-[#2E7D32] mb-0.5" />
-            <span className="text-[11px] font-heading font-semibold tracking-tight">WhatsApp</span>
+            <MessageSquare className="w-5 h-5 text-[#2E7D32] mb-1" strokeWidth={2} />
+            <span className="text-xs font-heading font-bold tracking-tight text-charcoal">WhatsApp</span>
           </a>
 
           {/* Action 3: Directions */}
@@ -52,11 +52,11 @@ export default function MobileContactBar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => analyticsEvents.directionsClick()}
-            className="flex flex-col items-center justify-center py-2 px-1 min-h-[52px] text-charcoal hover:bg-warm-bg active:bg-sandstone-tint transition-colors focus-visible:outline-2 focus-visible:outline-terracotta"
+            className="flex flex-col items-center justify-center py-2.5 px-1 min-h-[66px] text-charcoal hover:bg-warm-bg active:bg-sandstone/15 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
             aria-label="Get driving directions to Village Kalwa, Pillukhera"
           >
-            <Navigation className="w-4 h-4 text-terracotta mb-0.5" />
-            <span className="text-[11px] font-heading font-semibold tracking-tight">Directions</span>
+            <Navigation className="w-5 h-5 text-terracotta mb-1" strokeWidth={2} />
+            <span className="text-xs font-heading font-bold tracking-tight text-charcoal">Directions</span>
           </a>
         </div>
       </aside>

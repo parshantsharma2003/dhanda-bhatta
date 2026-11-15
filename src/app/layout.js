@@ -95,7 +95,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${archivo.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col bg-warm-bg text-charcoal font-body antialiased pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
+      <body className="min-h-screen flex flex-col bg-warm-bg text-charcoal font-body antialiased pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
         <GoogleAnalytics />
         <Navbar />
         <main className="flex-1 w-full">{children}</main>

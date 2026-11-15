@@ -124,16 +124,6 @@ export default async function ProductDetailPage({ params }) {
                 images={product.images}
                 productName={product.name}
               />
-
-              {/* Sample Disclaimer under images */}
-              {product.isSample && (
-                <div className="mt-4 p-3 bg-warm-bg border border-border-subtle text-[11px] text-secondary-text flex items-start gap-2">
-                  <Info className="w-4 h-4 text-sandstone shrink-0 mt-0.5" />
-                  <span>
-                    <strong>Sample Catalogue Notice:</strong> {productNotice.disclaimer}
-                  </span>
-                </div>
-              )}
             </div>
 
             {/* Right Column: Title, Details & Actions */}

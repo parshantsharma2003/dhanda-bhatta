@@ -21,17 +21,6 @@ export default function PageHero({
         className
       )}
     >
-      {/* Subtle architectural background grid */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(#252321 1px, transparent 1px), linear-gradient(to right, #252321 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-        aria-hidden="true"
-      />
-
       <PageContainer className="relative space-y-4 sm:space-y-6">
         {/* Breadcrumb Navigation */}
         {breadcrumbs && breadcrumbs.length > 0 && (

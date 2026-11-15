@@ -41,11 +41,9 @@ export default function ProductCard({ product, className = "" }) {
               {product.category || "Clay Brick"}
             </span>
 
-            {product.isSample && (
-              <Badge variant="sandstone" size="sm">
-                Sample
-              </Badge>
-            )}
+            <span className="font-heading uppercase tracking-wider text-terracotta font-bold bg-white/90 px-2 py-0.5 border border-border-subtle">
+              Kalwa
+            </span>
           </div>
 
           {/* Graphic Icon and Title in Placeholder Frame */}
@@ -60,8 +58,8 @@ export default function ProductCard({ product, className = "" }) {
 
           {/* Bottom attribution */}
           <div className="absolute bottom-2 inset-x-3 text-[10px] text-secondary-text flex items-center justify-between border-t border-border-subtle/60 pt-1">
-            <span>DBC Kiln Kalwa</span>
-            <span>Image Configurable</span>
+            <span>DBC Kiln</span>
+            <span>Batch Supply</span>
           </div>
         </Link>
 
