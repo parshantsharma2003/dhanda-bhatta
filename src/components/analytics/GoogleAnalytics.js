@@ -1,0 +1,40 @@
+import Script from "next/script";
+
+/**
+ * Optional Google Analytics 4 Script Component
+ *
+ * Controlled via NEXT_PUBLIC_GA_MEASUREMENT_ID.
+ * If the environment variable is unset, nothing is loaded, preserving zero network overhead.
+ */
+export default function GoogleAnalytics() {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+  if (!gaId || typeof gaId !== "string" || !gaId.startsWith("G-")) {
+    return null;
+  }
+
+  return (
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaId}', {
+              page_path: window.location.pathname,
+              anonymize_ip: true,
+              restricted_data_processing: true
+            });
+          `,
+        }}
+      />
+    </>
+  );
+}

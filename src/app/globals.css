@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta: #963D32;
+  --color-terracotta-hover: #7D3128;
+  --color-terracotta-light: #B24E42;
+  --color-terracotta-tint: #F3EAE8;
+  --color-charcoal: #252321;
+  --color-charcoal-muted: #3D3935;
+  --color-charcoal-dark: #191817;
+  --color-warm-bg: #F6F3ED;
+  --color-warm-surface: #FFFFFF;
+  --color-sandstone: #C5A477;
+  --color-sandstone-light: #DFC7A5;
+  --color-sandstone-tint: #FAF6EF;
+  --color-secondary-text: #655D55;
+  --color-border-subtle: #E6DFD4;
+  --color-border-strong: #C5BCAD;
+  --color-white: #FFFFFF;
+
+  --font-heading: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --primary-terracotta: #963D32;
+  --dark-charcoal: #252321;
+  --warm-background: #F6F3ED;
+  --sandstone: #C5A477;
+  --secondary-text: #655D55;
+  --border-color: #E6DFD4;
+  --white: #FFFFFF;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--warm-background);
+  color: var(--dark-charcoal);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Accessible minimum touch target utility */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Editorial hairline styling */
+.hairline-border {
+  border-color: #E6DFD4;
+}
+
+/* Subtle focus ring adhering to accessibility contrast */
+:focus-visible {
+  outline: 2px solid #963D32;
+  outline-offset: 2px;
+}
