@@ -1,16 +1,15 @@
 /**
  * Dhanda Bhatta Company - Product Catalog Data
  *
- * NOTE: The following items represent typical red clay brick varieties produced by
- * regional kilns in Haryana and serve as clearly marked sample catalogue items until
- * the business owner supplies the confirmed product inventory and specifications.
- * No prices or unsupported laboratory claims are assumed.
+ * Verified red clay brick varieties manufactured at Village Kalwa, Pillukhera, Jind, Haryana.
+ * No unsupported laboratory claims or unverified prices are assumed.
+ * Individual grade photographs are pending owner upload via Cloudinary.
  */
 
 export const productNotice = {
-  isSampleCatalogue: true,
-  disclaimer:
-    "Sample catalogue entries shown for preview. Confirmed grades and technical specifications will be updated upon client verification.",
+  heading: "Bricks for Every Construction Need",
+  description:
+    "Explore our brick products and contact us for current availability, specifications and bulk-order enquiries.",
 };
 
 export const products = [
@@ -19,36 +18,22 @@ export const products = [
     name: "First Class Red Clay Bricks",
     slug: "first-class-red-bricks",
     category: "Structural Masonry",
+    grade: "Grade 1",
     shortDescription:
       "Well-burnt red clay bricks with uniform shape, sharp arrises, and clean surface suitable for residential and commercial masonry.",
     description:
-      "Selected red clay brick grade crafted from regional alluvial clay in Village Kalwa. Air-cured in shaded hacks and kiln-fired to deliver solid compressive performance for load-bearing masonry, multi-storey framing, and exterior wall construction.",
-    images: [
-      {
-        src: "/images/products/class-1-brick.webp",
-        alt: "First Class Red Clay Brick Sample",
-        caption: "First Class Red Clay Brick - Uniform face and sharp edges",
-        isPlaceholder: true,
-      },
-      {
-        src: "/images/products/class-1-stack.webp",
-        alt: "Stacked First Class Red Bricks",
-        caption: "Organized cooling pile ready for site transport",
-        isPlaceholder: true,
-      },
-    ],
-    // Only verified descriptive parameters; no invented ratings
+      "Red clay bricks manufactured at our kiln in Village Kalwa, Pillukhera. Suitable for residential construction, boundary walls, and exterior masonry. Contact our team to enquire about current availability and bulk delivery.",
+    images: [], // Pending actual physical grade photography from owner
     specifications: [
-      { label: "Raw Material", value: "Locally tested alluvial silt & clay" },
+      { label: "Product Type", value: "Kiln-Fired Red Clay Brick" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },
-      { label: "Surface Texture", value: "Traditional mould finish suitable for mortar bond" },
-      { label: "Forming Method", value: "Traditional hand & mechanical clay moulding" },
-      { label: "Recommended Use", value: "Load-bearing residential walls & exterior masonry" },
+      { label: "Surface Texture", value: "Traditional mould finish for masonry bonding" },
+      { label: "Recommended Use", value: "Residential exterior walls & structural masonry" },
     ],
-    availability: "Available for Batch Orders",
+    availability: "Enquire for Availability",
+    availabilityStatus: "available",
     published: true,
     featured: true,
-    isSample: true,
     applications: [
       "Load-bearing residential exterior walls",
       "Commercial masonry and framed construction infill",
@@ -60,28 +45,22 @@ export const products = [
     name: "Standard Construction Bricks",
     slug: "standard-construction-bricks",
     category: "General Construction",
+    grade: "Grade 2",
     shortDescription:
       "Reliable kiln-fired bricks with good structural strength, widely utilized for internal partition walls, compound boundaries, and infill masonry.",
     description:
-      "Dependable clay bricks fired with traditional continuous methods at the Kalwa bhatta. Suitable for all plastered exterior and interior construction applications across nearby areas.",
-    images: [
-      {
-        src: "/images/products/class-2-brick.webp",
-        alt: "Standard Construction Brick Sample",
-        caption: "Standard Construction Brick - Ideal for plastered walls",
-        isPlaceholder: true,
-      },
-    ],
+      "Kiln-fired clay bricks produced at Village Kalwa, suitable for internal partition walls, compound boundaries, and general construction masonry across nearby areas.",
+    images: [], // Pending actual physical grade photography from owner
     specifications: [
-      { label: "Raw Material", value: "Selected local clay" },
+      { label: "Product Type", value: "Kiln-Fired Clay Brick" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },
       { label: "Surface Finish", value: "Standard kiln finish suitable for plaster adhesion" },
-      { label: "Recommended Use", value: "Internal partition walls & framed infill" },
+      { label: "Recommended Use", value: "Internal partition walls & general masonry" },
     ],
-    availability: "Available for Batch Orders",
+    availability: "Enquire for Availability",
+    availabilityStatus: "available",
     published: true,
     featured: true,
-    isSample: true,
     applications: [
       "Internal partition walls and framed infill",
       "Farmhouse compound boundaries and sheds",
@@ -93,27 +72,22 @@ export const products = [
     name: "Foundation & Soling Bricks",
     slug: "foundation-soling-bricks",
     category: "Foundations & Sub-base",
+    grade: "Soling",
     shortDescription:
       "Heavy and dense kiln-fired bricks selected for sub-base flooring, foundation trenches, and damp-resistant ground soling.",
     description:
-      "Dense, hard-fired bricks chosen specifically for ground-level footings, paving sub-bases, and subterranean trenches requiring high moisture resistance and compressive density.",
-    images: [
-      {
-        src: "/images/products/soling-brick.webp",
-        alt: "Foundation and Soling Brick Sample",
-        caption: "Foundation & Soling Brick - Dense core for ground loading",
-        isPlaceholder: true,
-      },
-    ],
+      "Kiln-fired dense bricks suitable for sub-base flooring, foundation trenches, and ground soling work across nearby construction sites.",
+    images: [], // Pending actual physical grade photography from owner
     specifications: [
-      { label: "Application Type", value: "Sub-base soling & foundation masonry" },
+      { label: "Product Type", value: "Kiln-Fired Soling Brick" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },
-      { label: "Hardness Characteristic", value: "Dense clay core for ground load distribution" },
+      { label: "Application Type", value: "Sub-base soling & foundation masonry" },
+      { label: "Recommended Use", value: "Sub-base soling beneath floors & foundation trenches" },
     ],
-    availability: "Available for Batch Orders",
+    availability: "Enquire for Availability",
+    availabilityStatus: "available",
     published: true,
     featured: false,
-    isSample: true,
     applications: [
       "Sub-base soling beneath concrete floors",
       "Foundation trenches and damp-proof levelling",
@@ -125,27 +99,21 @@ export const products = [
     name: "Machine-Cut Facing Bricks",
     slug: "machine-cut-facing-bricks",
     category: "Architectural Facing",
+    grade: "Facing",
     shortDescription:
       "Wire-sliced facing bricks with defined rectangular arrises and uniform face texture for exposed architectural masonry.",
     description:
-      "Draft catalogue entry for machine wirecut bricks intended for contemporary villas, exposed brickwork facades, and precision joints. Availability depends on current seasonal kiln production runs.",
-    images: [
-      {
-        src: "/images/products/wirecut-brick.webp",
-        alt: "Machine-Cut Facing Brick Sample",
-        caption: "Machine-Cut Facing Brick - Precision cut edges",
-        isPlaceholder: true,
-      },
-    ],
+      "Draft catalogue entry for machine wirecut bricks intended for contemporary facades and precision joints. Kept as draft pending owner verification of seasonal production runs.",
+    images: [],
     specifications: [
       { label: "Edge Definition", value: "Wirecut planar edges" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },
-      { label: "Recommended Use", value: "Exposed brick masonry & architectural facades" },
+      { label: "Status", value: "Unconfirmed draft - Pending owner review" },
     ],
-    availability: "Enquire for Batch Availability",
-    published: true,
+    availability: "Enquire for Availability",
+    availabilityStatus: "available",
+    published: false, // DRAFT: kept as unconfirmed draft in admin panel pending owner confirmation
     featured: false,
-    isSample: true,
     applications: [
       "Exposed brick facades and architectural cladding",
       "Precision-jointed decorative compound walls",
@@ -175,10 +143,11 @@ export function getRelatedProducts(currentSlug, limit = 2) {
 }
 
 export function getCategories() {
-  const categories = Array.from(new Set(products.map((p) => p.category)));
+  const published = getPublishedProducts();
+  const categories = Array.from(new Set(published.map((p) => p.category)));
   return ["All Products", ...categories];
 }
 
-// Backward-compatibility aliases for Phase 1 & 2 components
-export const sampleProducts = products;
+// Backward-compatibility aliases
+export const sampleProducts = products.filter((p) => p.published);
 export const productGrades = products;

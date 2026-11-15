@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, Info } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import PageContainer from "@/components/layout/PageContainer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProductCard from "@/components/ui/ProductCard";
 import Button from "@/components/ui/Button";
-import { sampleProducts, productNotice } from "@/data/products";
+import { sampleProducts } from "@/data/products";
 import { getPublishedProducts } from "@/services/productService";
 
 export default async function ProductShowcase() {
@@ -18,7 +18,7 @@ export default async function ProductShowcase() {
         <SectionHeading
           overline="Product Catalogue"
           title="Bricks for Every Construction Need"
-          description="Kiln-fired red clay bricks manufactured for residential walls, commercial frames, and foundation works."
+          description="Explore our brick products and contact us for current availability, specifications and bulk-order enquiries."
           align="split"
           action={
             <Button href="/products" variant="outline" iconRight={ArrowRight}>
@@ -35,17 +35,17 @@ export default async function ProductShowcase() {
           ))}
         </div>
 
-        {/* Bottom Wholesale CTA */}
+        {/* Bottom Project Enquiries Strip */}
         <div className="mt-10 sm:mt-12 p-6 bg-warm-bg border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <h4 className="font-heading font-bold text-sm sm:text-base text-charcoal">
-              Have specific brick requirements or bulk volume questions?
+              Planning a construction project in Jind or nearby areas?
             </h4>
             <p className="text-xs text-secondary-text">
-              Contact our sales desk to check current kiln batch availability and discuss custom orders.
+              Get in touch with our team to discuss delivery schedules, site access and volume requirements.
             </p>
           </div>
-          <Button href="/enquiry" variant="primary" size="sm" className="shrink-0">
+          <Button href="/enquiry" variant="primary" size="sm" className="shrink-0 min-h-[40px]">
             Submit Product Enquiry
           </Button>
         </div>

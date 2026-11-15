@@ -6,8 +6,12 @@ import { analyticsEvents } from "@/lib/analytics";
 
 /**
  * Mobile Contact Bar & Desktop Floating Actions
- * Mobile: Fixed bottom bar with Call, WhatsApp, Directions (~68-72px, safe-area aware, min 48px touch targets).
- * Desktop: Compact, unobtrusive floating contact actions dock.
+ * Mobile: Fixed bottom bar with Call, WhatsApp, Directions.
+ * - Height: 66px + safe-area-inset-bottom
+ * - Icons: 21px (within 20–22px guideline)
+ * - Text: 12.5px (within 12–13px guideline)
+ * - Equal widths (3 columns) with >44px touch targets
+ * - Guaranteed zero overlap with document pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))]
  */
 export default function MobileContactBar() {
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
@@ -18,19 +22,19 @@ export default function MobileContactBar() {
     <>
       {/* 1. Mobile Fixed Bottom Contact Bar (< 1024px) */}
       <aside
-        className="fixed bottom-0 inset-x-0 z-30 lg:hidden bg-white/98 backdrop-blur-md border-t border-border-strong shadow-[0_-4px_16px_rgba(37,35,33,0.08)] pb-[env(safe-area-inset-bottom,0px)]"
+        className="fixed bottom-0 inset-x-0 z-30 lg:hidden bg-white/98 backdrop-blur-md border-t border-border-strong shadow-[0_-4px_16px_rgba(37,35,33,0.08)] pb-[env(safe-area-inset-bottom,0px)] box-content"
         aria-label="Quick Contact Bar"
       >
-        <div className="grid grid-cols-3 divide-x divide-border-subtle max-w-md mx-auto">
+        <div className="grid grid-cols-3 divide-x divide-border-subtle w-full max-w-md mx-auto h-[66px]">
           {/* Action 1: Call */}
           <a
             href={`tel:${siteConfig.contact.primaryPhone}`}
             onClick={() => analyticsEvents.phoneClick("mobile_bottom_bar")}
-            className="flex flex-col items-center justify-center py-2.5 px-1 min-h-[66px] text-charcoal hover:bg-warm-bg active:bg-[#963D32]/10 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
+            className="flex flex-col items-center justify-center h-full px-1 text-charcoal hover:bg-warm-bg active:bg-[#963D32]/10 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
             aria-label={`Call Dhanda Bhatta Company at ${siteConfig.contact.primaryPhoneDisplay}`}
           >
-            <Phone className="w-5 h-5 text-terracotta mb-1" strokeWidth={2} />
-            <span className="text-xs font-heading font-bold tracking-tight text-charcoal">Call</span>
+            <Phone className="w-[21px] h-[21px] text-terracotta mb-1" strokeWidth={2} />
+            <span className="text-[12.5px] font-heading font-semibold tracking-tight text-charcoal">Call</span>
           </a>
 
           {/* Action 2: WhatsApp */}
@@ -39,11 +43,11 @@ export default function MobileContactBar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => analyticsEvents.whatsappClick("mobile_bottom_bar")}
-            className="flex flex-col items-center justify-center py-2.5 px-1 min-h-[66px] text-charcoal hover:bg-warm-bg active:bg-[#2E7D32]/10 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
+            className="flex flex-col items-center justify-center h-full px-1 text-charcoal hover:bg-warm-bg active:bg-[#2E7D32]/10 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
             aria-label="Chat with Dhanda Bhatta Company on WhatsApp"
           >
-            <MessageSquare className="w-5 h-5 text-[#2E7D32] mb-1" strokeWidth={2} />
-            <span className="text-xs font-heading font-bold tracking-tight text-charcoal">WhatsApp</span>
+            <MessageSquare className="w-[21px] h-[21px] text-[#2E7D32] mb-1" strokeWidth={2} />
+            <span className="text-[12.5px] font-heading font-semibold tracking-tight text-charcoal">WhatsApp</span>
           </a>
 
           {/* Action 3: Directions */}
@@ -52,11 +56,11 @@ export default function MobileContactBar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => analyticsEvents.directionsClick()}
-            className="flex flex-col items-center justify-center py-2.5 px-1 min-h-[66px] text-charcoal hover:bg-warm-bg active:bg-sandstone/15 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
+            className="flex flex-col items-center justify-center h-full px-1 text-charcoal hover:bg-warm-bg active:bg-sandstone/15 transition-colors focus-visible:outline-2 focus-visible:outline-terracotta select-none"
             aria-label="Get driving directions to Village Kalwa, Pillukhera"
           >
-            <Navigation className="w-5 h-5 text-terracotta mb-1" strokeWidth={2} />
-            <span className="text-xs font-heading font-bold tracking-tight text-charcoal">Directions</span>
+            <Navigation className="w-[21px] h-[21px] text-terracotta mb-1" strokeWidth={2} />
+            <span className="text-[12.5px] font-heading font-semibold tracking-tight text-charcoal">Directions</span>
           </a>
         </div>
       </aside>
@@ -100,10 +104,10 @@ export default function MobileContactBar() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => analyticsEvents.directionsClick()}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-warm-bg hover:bg-charcoal hover:text-white text-charcoal text-xs font-heading font-semibold transition-colors border border-border-subtle"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-warm-bg hover:bg-sandstone hover:text-white text-charcoal text-xs font-heading font-semibold transition-colors border border-border-subtle"
           title="Get Directions on Google Maps"
         >
-          <Navigation className="w-3.5 h-3.5 text-terracotta" />
+          <Navigation className="w-3.5 h-3.5 text-terracotta group-hover:text-white" />
           <span>Directions</span>
         </a>
       </aside>

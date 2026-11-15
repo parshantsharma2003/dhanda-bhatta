@@ -1,23 +1,17 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { MessageSquare, Phone, Truck, CheckCircle2, ShieldCheck, ArrowRight, Info } from "lucide-react";
+import { MessageSquare, ArrowRight } from "lucide-react";
 import PageContainer from "@/components/layout/PageContainer";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ProductImageGallery from "@/components/ui/ProductImageGallery";
 import RelatedProducts from "@/components/ui/RelatedProducts";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
-import Card from "@/components/ui/Card";
 import ContactCTA from "@/components/sections/ContactCTA";
-import {
-  productNotice,
-  getRelatedProducts,
-} from "@/data/products";
+import { getRelatedProducts } from "@/data/products";
 import { getProductBySlug, getPublishedProducts } from "@/services/productService";
 import { siteConfig } from "@/config/site";
 import {
-  getCanonicalUrl,
-  getSiteUrl,
   generatePageMetadata,
   generateProductSchema,
   generateBreadcrumbSchema,
@@ -45,7 +39,7 @@ export async function generateMetadata({ params }) {
   const primaryImage =
     product.images?.find((img) => img.isPrimary)?.src ||
     product.images?.[0]?.src ||
-    "/images/facility/kiln-hero.webp";
+    "/images/facility/kiln-hero.jpg";
 
   return generatePageMetadata({
     title: `${product.name} | Red Clay Bricks`,
@@ -102,8 +96,9 @@ export default async function ProductDetailPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+
       {/* Product Header / Breadcrumb Strip */}
-      <section className="bg-warm-bg border-b border-border-subtle py-4 sm:py-6">
+      <section className="bg-warm-bg border-b border-border-subtle py-4 sm:py-5">
         <PageContainer>
           <Breadcrumbs
             items={[
@@ -135,8 +130,8 @@ export default async function ProductDetailPage({ params }) {
                 </Badge>
 
                 {product.availability && (
-                  <Badge variant="subtle" size="md" className="border-green-600/30 text-[#2E7D32]">
-                    <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
+                  <Badge variant="subtle" size="md" className="border-sandstone/60 text-charcoal">
+                    <span className="w-1.5 h-1.5 rounded-full bg-sandstone mr-1.5 shrink-0" />
                     {product.availability}
                   </Badge>
                 )}
@@ -155,7 +150,7 @@ export default async function ProductDetailPage({ params }) {
               {/* Description */}
               <div className="space-y-3 text-sm sm:text-base text-secondary-text leading-relaxed border-t border-border-subtle pt-4">
                 <p>{product.description}</p>
-                {product.shortDescription !== product.description && (
+                {product.shortDescription && product.shortDescription !== product.description && (
                   <p className="text-xs sm:text-sm text-charcoal">{product.shortDescription}</p>
                 )}
               </div>
@@ -169,7 +164,7 @@ export default async function ProductDetailPage({ params }) {
                   <ul className="space-y-1.5 text-xs sm:text-sm text-secondary-text">
                     {product.applications.map((app) => (
                       <li key={app} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-terracotta shrink-0 mt-2" />
                         <span>{app}</span>
                       </li>
                     ))}
@@ -177,14 +172,14 @@ export default async function ProductDetailPage({ params }) {
                 </div>
               )}
 
-              {/* Verified Specifications Table (Rendered only when verified info exists) */}
+              {/* Verified Specifications Table */}
               {product.specifications && product.specifications.length > 0 && (
                 <div className="space-y-3 pt-3 border-t border-border-subtle">
                   <div className="flex items-center justify-between">
                     <h3 className="font-heading text-xs uppercase tracking-wider font-bold text-charcoal">
                       Verified Product Details
                     </h3>
-                    <span className="text-[11px] text-secondary-text">Factory Standard</span>
+                    <span className="text-[11px] text-secondary-text">Facility Standard</span>
                   </div>
 
                   <div className="bg-warm-bg border border-border-subtle divide-y divide-border-subtle text-xs">
@@ -210,17 +205,17 @@ export default async function ProductDetailPage({ params }) {
                     href={enquiryUrl}
                     variant="primary"
                     size="lg"
-                    className="justify-center flex-1"
+                    className="justify-center flex-1 min-h-[48px]"
                     iconRight={ArrowRight}
                   >
-                    Enquire About This Grade
+                    Enquire Now
                   </Button>
 
                   <Button
                     href={whatsappUrl}
                     variant="outline"
                     size="lg"
-                    className="justify-center border-sandstone/60 text-charcoal hover:bg-warm-bg hover:border-terracotta hover:text-terracotta"
+                    className="justify-center border-sandstone/60 text-charcoal hover:bg-warm-bg hover:border-terracotta hover:text-terracotta min-h-[48px]"
                     target="_blank"
                     rel="noopener noreferrer"
                     iconLeft={MessageSquare}
