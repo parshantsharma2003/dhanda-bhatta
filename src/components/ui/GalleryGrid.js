@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Camera, Eye } from "lucide-react";
 import Badge from "./Badge";
 import GalleryLightbox from "./GalleryLightbox";
@@ -104,35 +105,67 @@ export default function GalleryGrid({
               {/* Image Frame */}
               <div
                 className={cn(
-                  "relative w-full bg-[#ECE6DC] flex flex-col justify-between p-4 overflow-hidden group-hover:bg-[#E4DDCF] transition-colors",
+                  "relative w-full bg-[#ECE6DC] overflow-hidden group-hover:bg-[#E4DDCF] transition-colors",
                   item.aspect === "16/9" ? "aspect-16/9" : "aspect-4/3"
                 )}
               >
-                <div className="flex items-center justify-between z-10">
-                  <Badge variant="subtle" size="sm" className="bg-white/90">
-                    {item.badge || item.categoryLabel}
-                  </Badge>
-                  <span className="text-[10px] text-secondary-text bg-white/80 px-2 py-0.5">
-                    Field Media
-                  </span>
-                </div>
+                {item.mediaSrc ? (
+                  <>
+                    <Image
+                      src={item.mediaSrc}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-102 transition-transform duration-300"
+                    />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-transparent to-transparent pointer-events-none"
+                      aria-hidden="true"
+                    />
+                    <div className="absolute top-3 left-3 z-10">
+                      <Badge variant="subtle" size="sm" className="bg-white/90">
+                        {item.badge || item.categoryLabel}
+                      </Badge>
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3 text-white z-10 flex items-center justify-between">
+                      <span className="text-xs font-heading font-bold text-white drop-shadow-xs line-clamp-1">
+                        {item.title}
+                      </span>
+                      <span className="text-[10px] text-white/95 bg-charcoal/80 px-2 py-0.5 border border-white/20 inline-flex items-center gap-1 font-medium shrink-0 ml-2">
+                        <Eye className="w-3 h-3 text-sandstone" />
+                        Preview
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex flex-col justify-between p-4 h-full">
+                    <div className="flex items-center justify-between z-10">
+                      <Badge variant="subtle" size="sm" className="bg-white/90">
+                        {item.badge || item.categoryLabel}
+                      </Badge>
+                      <span className="text-[10px] text-secondary-text bg-white/80 px-2 py-0.5">
+                        Field Media
+                      </span>
+                    </div>
 
-                <div className="my-auto text-center py-4">
-                  <div className="w-10 h-10 mx-auto mb-2 bg-white/90 border border-border-subtle flex items-center justify-center text-terracotta group-hover:scale-105 transition-transform">
-                    <Camera className="w-5 h-5" />
+                    <div className="my-auto text-center py-4">
+                      <div className="w-10 h-10 mx-auto mb-2 bg-white/90 border border-border-subtle flex items-center justify-center text-terracotta group-hover:scale-105 transition-transform">
+                        <Camera className="w-5 h-5" />
+                      </div>
+                      <h3 className="font-heading font-bold text-xs sm:text-sm text-charcoal px-2">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    <div className="text-[10px] text-secondary-text flex items-center justify-between border-t border-border-subtle/70 pt-1">
+                      <span>Village Kalwa</span>
+                      <span className="text-terracotta inline-flex items-center gap-1 font-medium">
+                        <Eye className="w-3 h-3" />
+                        Preview
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="font-heading font-bold text-xs sm:text-sm text-charcoal px-2">
-                    {item.title}
-                  </h3>
-                </div>
-
-                <div className="text-[10px] text-secondary-text flex items-center justify-between border-t border-border-subtle/70 pt-1">
-                  <span>Village Kalwa</span>
-                  <span className="text-terracotta inline-flex items-center gap-1 font-medium">
-                    <Eye className="w-3 h-3" />
-                    Preview
-                  </span>
-                </div>
+                )}
               </div>
 
               {/* Caption Card Body */}

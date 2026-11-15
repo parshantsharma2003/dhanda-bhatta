@@ -28,7 +28,10 @@ export default function ProductCard({ product, className = "" }) {
       !primaryImage.isPlaceholder &&
       (primaryImage.src.startsWith("http://") ||
         primaryImage.src.startsWith("https://") ||
-        primaryImage.src.startsWith("/images/facility/"))
+        primaryImage.src.startsWith("/images/facility/") ||
+        primaryImage.src.startsWith("/images/products/") ||
+        primaryImage.src.startsWith("/images/delivery/") ||
+        primaryImage.src.startsWith("/images/gallery/"))
   );
 
   return (

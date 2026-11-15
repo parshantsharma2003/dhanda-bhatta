@@ -64,24 +64,32 @@ export default async function AboutPage() {
       title: "Clay Preparation",
       description:
         "Preparing quality regional soil with water to achieve proper consistency for uniform brick shaping.",
+      image: "/images/facility/bhatta-panoramic-yard.png",
+      imageAlt: "Alluvial clay conditioning and kiln yard landscape at Village Kalwa",
     },
     {
       stage: "02",
       title: "Moulding & Shaping",
       description:
         "Forming green bricks using standard rectangular moulds for sharp corners and standard construction dimensions.",
+      image: "/images/facility/green-bricks-field.jpg",
+      imageAlt: "Freshly moulded green bricks drying in long rows in the field",
     },
     {
       stage: "03",
       title: "Sun Drying in Open Yards",
       description:
         "Stacking green bricks in open-air hacks to allow steady moisture evaporation before kiln loading.",
+      image: "/images/facility/sun-drying-hacks.jpg",
+      imageAlt: "Green bricks stacked in open-air drying hacks under natural sun",
     },
     {
       stage: "04",
       title: "Kiln Firing & Dispatch",
       description:
         "Firing bricks in the kiln to full hardness, followed by sorting in the yard for direct site transport.",
+      image: "/images/facility/kiln-fire-chamber.png",
+      imageAlt: "Active kiln firing chamber with incandescent red-orange thermal combustion",
     },
   ];
 
@@ -208,18 +216,30 @@ export default async function AboutPage() {
             {workingStages.map((item) => (
               <div
                 key={item.stage}
-                className="border border-border-subtle p-6 bg-warm-bg/50 hover:bg-white hover:border-sandstone transition-colors flex flex-col justify-between space-y-4"
+                className="border border-border-subtle bg-white hover:border-sandstone transition-colors flex flex-col justify-between overflow-hidden shadow-2xs group"
               >
-                <div className="space-y-2">
-                  <span className="font-heading font-bold text-2xl text-sandstone">
-                    {item.stage}
-                  </span>
-                  <h3 className="font-heading font-bold text-base text-charcoal">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-secondary-text leading-relaxed">
-                    {item.description}
-                  </p>
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-[#ECE6DC] border-b border-border-subtle">
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover group-hover:scale-102 transition-transform duration-300"
+                  />
+                  <div className="absolute top-2 left-2 bg-charcoal/85 text-sandstone font-heading font-extrabold text-xs px-2 py-0.5 border border-white/10">
+                    Stage {item.stage}
+                  </div>
+                </div>
+
+                <div className="p-5 space-y-2 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-heading font-bold text-base text-charcoal">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-secondary-text leading-relaxed mt-1.5">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

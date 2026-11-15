@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Camera, Video } from "lucide-react";
 import Badge from "./Badge";
 
@@ -83,12 +84,12 @@ export default function GalleryLightbox({
         </div>
 
         {/* Media Frame Area */}
-        <div className="relative aspect-16/10 sm:aspect-16/9 bg-[#23211F] flex flex-col items-center justify-center p-6 text-center overflow-hidden">
+        <div className="relative aspect-16/10 sm:aspect-16/9 bg-[#1C1A18] flex flex-col items-center justify-center text-center overflow-hidden">
           {/* Previous Button */}
           <button
             type="button"
             onClick={onPrev}
-            className="touch-target p-2 absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-charcoal/80 hover:bg-terracotta text-white border border-white/20 transition-colors"
+            className="touch-target p-2 absolute left-3 top-1/2 -translate-y-1/2 z-30 bg-charcoal/80 hover:bg-terracotta text-white border border-white/20 transition-colors"
             aria-label="Previous media item"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -98,36 +99,57 @@ export default function GalleryLightbox({
           <button
             type="button"
             onClick={onNext}
-            className="touch-target p-2 absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-charcoal/80 hover:bg-terracotta text-white border border-white/20 transition-colors"
+            className="touch-target p-2 absolute right-3 top-1/2 -translate-y-1/2 z-30 bg-charcoal/80 hover:bg-terracotta text-white border border-white/20 transition-colors"
             aria-label="Next media item"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
           {/* Media Content Display */}
-          <div className="my-auto max-w-lg space-y-3 px-8">
-            <div className="w-14 h-14 mx-auto bg-terracotta/20 border border-terracotta/40 flex items-center justify-center text-sandstone shadow-inner">
-              {currentItem.type === "video" ? (
-                <Video className="w-7 h-7" />
-              ) : (
-                <Camera className="w-7 h-7" />
+          {currentItem.mediaSrc ? (
+            <div className="relative w-full h-full">
+              <Image
+                src={currentItem.mediaSrc}
+                alt={currentItem.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-contain"
+                priority
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/95 via-charcoal/70 to-transparent p-4 sm:p-6 text-left z-20">
+                <h3 className="font-heading font-bold text-base sm:text-lg text-white">
+                  {currentItem.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-warm-bg/90 mt-1 max-w-2xl leading-relaxed">
+                  {currentItem.caption}
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="my-auto max-w-lg space-y-3 px-8 p-6">
+              <div className="w-14 h-14 mx-auto bg-terracotta/20 border border-terracotta/40 flex items-center justify-center text-sandstone shadow-inner">
+                {currentItem.type === "video" ? (
+                  <Video className="w-7 h-7" />
+                ) : (
+                  <Camera className="w-7 h-7" />
+                )}
+              </div>
+
+              <h3 className="font-heading font-bold text-lg sm:text-xl text-white">
+                {currentItem.title}
+              </h3>
+
+              <p className="text-xs sm:text-sm text-warm-bg/80 leading-relaxed">
+                {currentItem.caption}
+              </p>
+
+              {currentItem.specsRequired && (
+                <p className="text-[11px] text-sandstone pt-2 border-t border-white/10">
+                  Documentation Standard: {currentItem.specsRequired}
+                </p>
               )}
             </div>
-
-            <h3 className="font-heading font-bold text-lg sm:text-xl text-white">
-              {currentItem.title}
-            </h3>
-
-            <p className="text-xs sm:text-sm text-warm-bg/80 leading-relaxed">
-              {currentItem.caption}
-            </p>
-
-            {currentItem.specsRequired && (
-              <p className="text-[11px] text-sandstone pt-2 border-t border-white/10">
-                Documentation Standard: {currentItem.specsRequired}
-              </p>
-            )}
-          </div>
+          )}
         </div>
 
         {/* Lightbox Footer Bar */}

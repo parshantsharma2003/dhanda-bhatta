@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Camera, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import PageContainer from "@/components/layout/PageContainer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -65,43 +65,38 @@ export default function GalleryPreview() {
 
           {/* Right Column (5 cols with stacked visual cards) */}
           <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-5">
-            {/* Slot 2: Kiln Operations / Video Showcase */}
+            {/* Slot 2: Kiln Operations (High-heat firing) */}
             <Link
               href="/gallery"
               className="border border-border-subtle bg-white p-3 sm:p-4 flex flex-col justify-between shadow-2xs group hover:border-sandstone transition-colors"
             >
-              <div className="relative aspect-[16/9] w-full bg-[#252321] text-white flex flex-col justify-between p-4 overflow-hidden">
-                <div className="flex items-center justify-between">
-                  <Badge variant="sandstone" size="sm">
-                    {homepageGalleryItems[2]?.badge || "Video Tour"}
+              <div className="relative aspect-[16/9] w-full bg-[#252321] text-white flex flex-col justify-between overflow-hidden">
+                <Image
+                  src={homepageGalleryItems[2]?.mediaSrc || "/images/facility/kiln-fire-chamber.png"}
+                  alt={homepageGalleryItems[2]?.title || "High-Heat Kiln Firing"}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center group-hover:scale-102 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent pointer-events-none" />
+                <div className="absolute top-3 left-3 z-10">
+                  <Badge variant="terracotta" size="sm">
+                    {homepageGalleryItems[2]?.badge || "Kiln Firing"}
                   </Badge>
-                  {homepageGalleryItems[2]?.duration && (
-                    <span className="text-[10px] bg-charcoal/80 text-warm-bg px-2 py-0.5 border border-white/20">
-                      {homepageGalleryItems[2].duration}
-                    </span>
-                  )}
                 </div>
-
-                <div className="my-auto text-center py-2">
-                  <div className="w-10 h-10 mx-auto mb-1.5 bg-terracotta text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
-                    <Play className="w-4 h-4 fill-white ml-0.5" />
-                  </div>
-                  <p className="font-heading font-bold text-xs sm:text-sm text-white">
-                    {homepageGalleryItems[2]?.title || "Kiln Operation Overview"}
+                <div className="absolute bottom-3 left-3 right-3 text-white z-10">
+                  <p className="font-heading font-bold text-xs sm:text-sm text-white drop-shadow-xs">
+                    {homepageGalleryItems[2]?.title || "High-Heat Kiln Firing Chamber"}
                   </p>
-                </div>
-
-                <div className="text-[10px] text-warm-bg/70 flex items-center justify-between border-t border-white/10 pt-1">
-                  <span>Operations Walkthrough</span>
-                  <span className="text-sandstone">Village Kalwa</span>
+                  <p className="text-[10px] text-warm-bg/80 mt-0.5">Village Kalwa, Pillukhera</p>
                 </div>
               </div>
 
               <div className="pt-2.5 flex items-center justify-between text-xs px-1">
                 <span className="font-heading font-semibold text-charcoal">
-                  {homepageGalleryItems[2]?.title || "Kiln Operation Overview"}
+                  {homepageGalleryItems[2]?.title || "High-Heat Kiln Firing Chamber"}
                 </span>
-                <span className="text-terracotta font-medium text-[11px]">Explore &rarr;</span>
+                <span className="text-terracotta font-medium text-[11px]">View Photo &rarr;</span>
               </div>
             </Link>
 
@@ -110,32 +105,31 @@ export default function GalleryPreview() {
               href="/gallery"
               className="border border-border-subtle bg-white p-3 sm:p-4 flex flex-col justify-between shadow-2xs group hover:border-sandstone transition-colors"
             >
-              <div className="relative aspect-[16/9] w-full bg-[#F0EBE1] border border-border-subtle flex flex-col justify-between p-4 overflow-hidden group-hover:bg-[#EAE4D8] transition-colors">
-                <div className="flex items-center justify-between">
-                  <Badge variant="subtle" size="sm">
-                    {homepageGalleryItems[1]?.badge || "Stockyard"}
+              <div className="relative aspect-[16/9] w-full bg-[#F0EBE1] border border-border-subtle flex flex-col justify-between overflow-hidden group-hover:bg-[#EAE4D8] transition-colors">
+                <Image
+                  src={homepageGalleryItems[1]?.mediaSrc || "/images/facility/bhatta-panoramic-yard.png"}
+                  alt={homepageGalleryItems[1]?.title || "Bhatta Stockyard Panoramic"}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center group-hover:scale-102 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent pointer-events-none" />
+                <div className="absolute top-3 left-3 z-10">
+                  <Badge variant="sandstone" size="sm">
+                    {homepageGalleryItems[1]?.badge || "Kiln Yard"}
                   </Badge>
-                  <span className="text-[10px] text-secondary-text font-medium">Kiln Yard</span>
                 </div>
-
-                <div className="my-auto text-center py-2">
-                  <div className="w-9 h-9 mx-auto mb-1.5 bg-white border border-border-subtle flex items-center justify-center text-terracotta shadow-2xs">
-                    <Camera className="w-4 h-4" />
-                  </div>
-                  <p className="font-heading font-bold text-xs sm:text-sm text-charcoal">
-                    {homepageGalleryItems[1]?.title || "Brick Curing & Stacking Yard"}
+                <div className="absolute bottom-3 left-3 right-3 text-white z-10">
+                  <p className="font-heading font-bold text-xs sm:text-sm text-white drop-shadow-xs">
+                    {homepageGalleryItems[1]?.title || "Bhatta Stockyard Panoramic"}
                   </p>
-                </div>
-
-                <div className="text-[10px] text-secondary-text flex items-center justify-between border-t border-border-subtle pt-1">
-                  <span>Stacking & Sorting</span>
-                  <span>Village Kalwa</span>
+                  <p className="text-[10px] text-warm-bg/80 mt-0.5">Village Kalwa, Pillukhera</p>
                 </div>
               </div>
 
               <div className="pt-2.5 flex items-center justify-between text-xs px-1">
                 <span className="font-heading font-semibold text-charcoal">
-                  {homepageGalleryItems[1]?.title || "Brick Curing & Stacking Yard"}
+                  {homepageGalleryItems[1]?.title || "Bhatta Stockyard Panoramic"}
                 </span>
                 <span className="text-secondary-text text-[11px]">View Photo &rarr;</span>
               </div>

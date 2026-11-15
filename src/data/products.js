@@ -23,7 +23,26 @@ export const products = [
       "Well-burnt red clay bricks with uniform shape, sharp arrises, and clean surface suitable for residential and commercial masonry.",
     description:
       "Red clay bricks manufactured at our kiln in Village Kalwa, Pillukhera. Suitable for residential construction, boundary walls, and exterior masonry. Contact our team to enquire about current availability and bulk delivery.",
-    images: [], // Pending actual physical grade photography from owner
+    images: [
+      {
+        src: "/images/products/class-1-hanuman-brick.jpg",
+        alt: "First Class Red Clay Brick with 'हनुमान' frog brand",
+        caption: "First Class red clay brick with authentic 'हनुमान' brand mark, manufactured at Village Kalwa",
+        isPrimary: true,
+      },
+      {
+        src: "/images/products/class-1-red-brick-stack.jpg",
+        alt: "Stepped stack of first class red clay bricks in kiln yard",
+        caption: "Cured first class red clay brick stacks ready for masonry delivery",
+        isPrimary: false,
+      },
+      {
+        src: "/images/products/class-1-hanuman-brick-alt.jpg",
+        alt: "Detail view of first class clay brick frog",
+        caption: "Sharp arrises and clear 'हनुमान' frog embossing",
+        isPrimary: false,
+      },
+    ],
     specifications: [
       { label: "Product Type", value: "Kiln-Fired Red Clay Brick" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },
@@ -50,7 +69,26 @@ export const products = [
       "Reliable kiln-fired bricks with good structural strength, widely utilized for internal partition walls, compound boundaries, and infill masonry.",
     description:
       "Kiln-fired clay bricks produced at Village Kalwa, suitable for internal partition walls, compound boundaries, and general construction masonry across nearby areas.",
-    images: [], // Pending actual physical grade photography from owner
+    images: [
+      {
+        src: "/images/products/standard-hbc-brick.jpg",
+        alt: "Standard Construction Bricks with 'HBC' brand stamp",
+        caption: "Standard kiln-fired construction bricks with authentic 'HBC' frog mark",
+        isPrimary: true,
+      },
+      {
+        src: "/images/products/standard-hbc-brick-stack.png",
+        alt: "Standard brick stack in yard with kiln chimney in background",
+        caption: "Solid stack of cured standard construction bricks with kiln chimney in the background",
+        isPrimary: false,
+      },
+      {
+        src: "/images/products/standard-stepped-stack.jpg",
+        alt: "Stepped stack of standard construction bricks",
+        caption: "Stockyard stacks sorted for partition and general building masonry",
+        isPrimary: false,
+      },
+    ],
     specifications: [
       { label: "Product Type", value: "Kiln-Fired Clay Brick" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },
@@ -77,7 +115,20 @@ export const products = [
       "Heavy and dense kiln-fired bricks selected for sub-base flooring, foundation trenches, and damp-resistant ground soling.",
     description:
       "Kiln-fired dense bricks suitable for sub-base flooring, foundation trenches, and ground soling work across nearby construction sites.",
-    images: [], // Pending actual physical grade photography from owner
+    images: [
+      {
+        src: "/images/products/soling-brick-stack.png",
+        alt: "Dense brick stacks in kiln yard for sub-base flooring and foundation",
+        caption: "Heavy kiln-fired bricks selected for sub-base flooring and foundation trench soling",
+        isPrimary: true,
+      },
+      {
+        src: "/images/products/soling-vent-stack.png",
+        alt: "Cooling clamp arrangement for dense foundation bricks",
+        caption: "Cooling clamp arrangement in the Kalwa stockyard",
+        isPrimary: false,
+      },
+    ],
     specifications: [
       { label: "Product Type", value: "Kiln-Fired Soling Brick" },
       { label: "Manufacturing Origin", value: "Village Kalwa, Pillukhera (Jind, Haryana)" },

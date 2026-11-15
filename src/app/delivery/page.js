@@ -114,8 +114,8 @@ export default function DeliveryPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden border border-border-subtle shadow-sm bg-[#EAE4D9]">
                 <Image
-                  src="/images/facility/kiln-hero.jpg"
-                  alt="Dhanda Bhatta Company brick kiln chimney, loading area, and blue tractor trolley at Village Kalwa"
+                  src="/images/delivery/truck-loading-delivery.png"
+                  alt="Direct brick haulage truck loaded with red clay bricks at Dhanda Bhatta Company, Village Kalwa"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-center"
@@ -125,12 +125,12 @@ export default function DeliveryPage() {
                   aria-hidden="true"
                 />
                 <div className="absolute bottom-3 left-3 right-3 text-[11px] text-white/95 bg-charcoal/85 backdrop-blur-xs px-3 py-1.5 flex items-center justify-between border border-white/10">
-                  <span className="font-heading font-medium tracking-wide">Kiln Yard Loading</span>
+                  <span className="font-heading font-medium tracking-wide">Kiln Gate Dispatch</span>
                   <span className="text-sandstone-light">Village Kalwa, Pillukhera</span>
                 </div>
               </div>
               <p className="text-xs text-secondary-text mt-2 text-center sm:text-left">
-                Direct vehicle transport and tractor haulage coordinated from our Kalwa stockyard.
+                Direct vehicle transport and site haulage coordinated from our Kalwa stockyard.
               </p>
             </div>
           </div>

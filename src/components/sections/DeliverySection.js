@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Truck, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import PageContainer from "@/components/layout/PageContainer";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -65,18 +66,37 @@ export default function DeliverySection() {
 
           {/* Right: Architectural Dispatch Highlights Card */}
           <div className="lg:col-span-6">
-            <Card surface="warm" className="p-6 sm:p-8 space-y-6 border-2 border-border-subtle">
-              <div className="border-b border-border-subtle pb-4">
-                <span className="text-[11px] font-heading uppercase tracking-widest text-terracotta font-bold">
-                  Bhatta Dispatch Facility
-                </span>
-                <h3 className="font-heading font-bold text-xl text-charcoal mt-1">
-                  Direct Kiln Gate Transport
-                </h3>
-                <p className="text-xs text-secondary-text mt-0.5">
-                  Village Kalwa, Tehsil Pillukhera (Jind)
-                </p>
+            <Card surface="warm" padded={false} className="overflow-hidden border-2 border-border-subtle">
+              <div className="relative aspect-16/9 w-full bg-[#1D1B19]">
+                <Image
+                  src="/images/delivery/truck-loading-delivery.png"
+                  alt="Brick haulage truck loaded with red clay bricks at Dhanda Bhatta Company, Village Kalwa"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent pointer-events-none"
+                  aria-hidden="true"
+                />
+                <div className="absolute bottom-3 left-3 right-3 text-[11px] text-white/95 bg-charcoal/85 backdrop-blur-xs px-3 py-1.5 flex items-center justify-between border border-white/10">
+                  <span className="font-heading font-medium tracking-wide">Kiln Gate Dispatch</span>
+                  <span className="text-sandstone-light">Village Kalwa, Pillukhera</span>
+                </div>
               </div>
+
+              <div className="p-6 sm:p-8 space-y-6">
+                <div className="border-b border-border-subtle pb-4">
+                  <span className="text-[11px] font-heading uppercase tracking-widest text-terracotta font-bold">
+                    Bhatta Dispatch Facility
+                  </span>
+                  <h3 className="font-heading font-bold text-xl text-charcoal mt-1">
+                    Direct Kiln Gate Transport
+                  </h3>
+                  <p className="text-xs text-secondary-text mt-0.5">
+                    Village Kalwa, Tehsil Pillukhera (Jind)
+                  </p>
+                </div>
 
               <div className="space-y-4 text-xs sm:text-sm text-secondary-text">
                 <div className="flex items-start gap-3 p-3.5 bg-white border border-border-subtle">
@@ -106,7 +126,8 @@ export default function DeliverySection() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </Card>
+            </div>
+          </Card>
           </div>
         </div>
       </PageContainer>

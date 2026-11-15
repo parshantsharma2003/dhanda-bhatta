@@ -21,6 +21,8 @@ export const metadata = generatePageMetadata({
   ],
 });
 
+export const dynamic = "force-dynamic";
+
 export default async function GalleryPage() {
   const { items } = await getPublishedGalleryAssets();
   const breadcrumbLd = generateBreadcrumbSchema([{ name: "Gallery", url: "/gallery" }]);

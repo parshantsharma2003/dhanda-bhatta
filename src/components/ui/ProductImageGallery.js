@@ -22,7 +22,10 @@ export default function ProductImageGallery({ images = [], productName = "Brick 
       !currentImage.isPlaceholder &&
       (currentImage.src.startsWith("http://") ||
         currentImage.src.startsWith("https://") ||
-        currentImage.src.startsWith("/images/facility/"))
+        currentImage.src.startsWith("/images/facility/") ||
+        currentImage.src.startsWith("/images/products/") ||
+        currentImage.src.startsWith("/images/delivery/") ||
+        currentImage.src.startsWith("/images/gallery/"))
   );
 
   return (
