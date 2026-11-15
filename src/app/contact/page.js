@@ -5,7 +5,6 @@ import ContactInformation from "@/components/ui/ContactInformation";
 import SocialMediaLinks from "@/components/ui/SocialMediaLinks";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
-import Badge from "@/components/ui/Badge";
 import ContactCTA from "@/components/sections/ContactCTA";
 import { siteConfig } from "@/config/site";
 import { generatePageMetadata, generateBreadcrumbSchema } from "@/lib/seo";
@@ -25,9 +24,6 @@ export const metadata = generatePageMetadata({
 
 export default function ContactPage() {
   const breadcrumbLd = generateBreadcrumbSchema([{ name: "Contact", url: "/contact" }]);
-  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
-    "Hello Dhanda Bhatta Company, I would like to enquire about brick availability and delivery."
-  )}`;
 
   return (
     <div>
@@ -51,10 +47,10 @@ export default function ContactPage() {
             <div className="lg:col-span-7 space-y-8">
               <ContactInformation />
 
-              {/* Verified Social Media Links (Rendered only if actual URLs are available) */}
+              {/* Verified Social Media Links */}
               {siteConfig.socialLinks && siteConfig.socialLinks.length > 0 && (
-                <div className="p-4 bg-warm-bg border border-border-subtle space-y-2">
-                  <span className="text-xs font-heading uppercase tracking-wider text-charcoal font-bold">
+                <div className="p-5 bg-warm-bg border border-border-subtle space-y-3">
+                  <span className="text-xs font-heading uppercase tracking-wider text-charcoal font-bold block">
                     Official Social Profiles:
                   </span>
                   <SocialMediaLinks />
@@ -62,18 +58,18 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Right Column: Embedded Map Area & Driving Landmark Directions */}
+            {/* Right Column: Location Map Area & Driving Landmark Directions */}
             <div className="lg:col-span-5 space-y-6">
-              {/* Map Container */}
-              <div className="border border-border-strong bg-warm-bg p-5 sm:p-6 space-y-4">
+              {/* Map Target Container */}
+              <div className="border border-border-strong bg-warm-bg p-5 sm:p-6 space-y-4 shadow-2xs">
                 <div className="flex items-center justify-between pb-3 border-b border-border-subtle">
                   <span className="text-xs font-heading uppercase tracking-widest text-terracotta font-bold">
-                    Location Map
+                    Location Navigation
                   </span>
                   <span className="text-[11px] text-secondary-text">Kalwa, Pillukhera</span>
                 </div>
 
-                {/* Embedded Map Area (When verified embed URL is supplied) or Visual Map Placeholder */}
+                {/* Embedded Map Area or Architectural Map Target */}
                 {siteConfig.location.embedMapUrl ? (
                   <div className="relative aspect-4/3 w-full border border-border-subtle overflow-hidden">
                     <iframe
@@ -85,20 +81,25 @@ export default function ContactPage() {
                     />
                   </div>
                 ) : (
-                  <div className="relative aspect-4/3 w-full bg-[#EDE7DD] border border-border-subtle flex flex-col justify-between p-5 text-center">
-                    <div className="text-[10px] text-secondary-text text-left">
-                      GPS Navigation Target
+                  <div className="relative aspect-4/3 w-full bg-[#F8F5EE] border border-border-subtle flex flex-col justify-between p-5 text-center overflow-hidden">
+                    <div className="flex items-center justify-between text-[10px] text-secondary-text z-10">
+                      <span className="font-heading uppercase tracking-wider font-semibold bg-white/95 px-2 py-0.5 border border-border-subtle">
+                        GPS Destination
+                      </span>
+                      <span className="font-heading uppercase tracking-wider font-semibold text-terracotta bg-white/95 px-2 py-0.5 border border-border-subtle">
+                        Verified Pin
+                      </span>
                     </div>
 
-                    <div className="my-auto space-y-2">
-                      <div className="w-10 h-10 mx-auto bg-white border border-border-subtle flex items-center justify-center text-terracotta shadow-xs">
+                    <div className="my-auto space-y-2 py-2">
+                      <div className="w-11 h-11 mx-auto bg-white border border-sandstone/60 flex items-center justify-center text-terracotta shadow-2xs">
                         <MapPin className="w-5 h-5" />
                       </div>
-                      <h2 className="font-heading font-bold text-sm text-charcoal">
+                      <h2 className="font-heading font-bold text-base text-charcoal">
                         Village Kalwa, Pillukhera
                       </h2>
                       <p className="text-xs text-secondary-text max-w-xs mx-auto">
-                        Tehsil Pillukhera, District Jind, Haryana - 126113
+                        Near Dharoli Gausala, Tehsil Pillukhera, District Jind, Haryana - 126113
                       </p>
                     </div>
 
@@ -106,7 +107,7 @@ export default function ContactPage() {
                       href={siteConfig.location.directionsUrl}
                       variant="primary"
                       size="sm"
-                      className="w-full justify-center"
+                      className="w-full justify-center min-h-[40px]"
                       iconRight={ExternalLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -118,31 +119,30 @@ export default function ContactPage() {
 
                 {/* Driving Landmarks */}
                 <div className="pt-2 space-y-2 text-xs text-secondary-text">
-                  <strong className="text-charcoal block">Driving Route Guide:</strong>
+                  <strong className="text-charcoal block font-semibold">Driving Route Guide:</strong>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Located along the Pillukhera - Kalwa Link Road</li>
                     <li>Approximately 4 km from Pillukhera Grain Market (Anaaj Mandi)</li>
-                    <li>Easily accessible from Jind - Gohana corridor via Pillukhera turn</li>
+                    <li>Accessible from Jind - Gohana corridor via Pillukhera turn</li>
                   </ul>
                 </div>
               </div>
 
               {/* In-Person Visit Advisory */}
-              <Card surface="white" className="space-y-3 p-5 sm:p-6">
+              <Card surface="white" className="space-y-3 p-5 sm:p-6 shadow-2xs">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-terracotta shrink-0" />
                   <h4 className="font-heading font-bold text-sm sm:text-base text-charcoal">
                     Facility Batch Inspection
                   </h4>
                 </div>
-                <p className="text-xs text-secondary-text leading-relaxed">
+                <p className="text-xs sm:text-sm text-secondary-text leading-relaxed">
                   Contractors and home builders are welcome to inspect brick stacks firsthand at our Kalwa
                   facility before delivery dispatch.
                 </p>
-                <div className="pt-2 text-xs text-charcoal space-y-1">
-                  <p>
-                    <strong>Recommended Inspection Hours:</strong> 7:00 AM to 6:00 PM daily
-                  </p>
+                <div className="pt-1 text-xs text-charcoal">
+                  <span className="font-semibold">Recommended Hours: </span>
+                  <span className="text-secondary-text">7:00 AM to 6:00 PM daily</span>
                 </div>
               </Card>
             </div>

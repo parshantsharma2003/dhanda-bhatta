@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Reusable ContactInformation Component
- * Used on the Contact page, Footer, and Contact sections.
+ * Verified contact channels, physical kiln address, and dispatch hours.
  */
 export default function ContactInformation({ className = "" }) {
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
@@ -19,7 +19,7 @@ export default function ContactInformation({ className = "" }) {
       {/* Primary Contact Channels Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Phone Contact */}
-        <Card surface="white" className="space-y-3 p-5 sm:p-6">
+        <Card surface="white" className="space-y-3 p-5 sm:p-6 shadow-2xs">
           <div className="w-10 h-10 bg-terracotta-tint border border-terracotta/20 flex items-center justify-center text-terracotta">
             <Phone className="w-5 h-5" />
           </div>
@@ -32,20 +32,18 @@ export default function ContactInformation({ className = "" }) {
           <div className="pt-2">
             <a
               href={`tel:${siteConfig.contact.primaryPhone}`}
-              className="text-sm font-heading font-bold text-terracotta hover:underline block"
+              className="text-base font-heading font-bold text-terracotta hover:underline block"
             >
               {siteConfig.contact.primaryPhoneDisplay}
             </a>
-            {siteConfig.contact.isPlaceholder && (
-              <span className="text-[10px] text-secondary-text block mt-0.5">
-                (Primary Kiln Dispatch Desk)
-              </span>
-            )}
+            <span className="text-[11px] text-secondary-text block mt-0.5">
+              Direct Kiln Dispatch Line
+            </span>
           </div>
         </Card>
 
         {/* WhatsApp Channel */}
-        <Card surface="white" className="space-y-3 p-5 sm:p-6">
+        <Card surface="white" className="space-y-3 p-5 sm:p-6 shadow-2xs">
           <div className="w-10 h-10 bg-[#E8F5E9] border border-[#2E7D32]/20 flex items-center justify-center text-[#2E7D32]">
             <MessageSquare className="w-5 h-5" />
           </div>
@@ -60,21 +58,24 @@ export default function ContactInformation({ className = "" }) {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-heading font-bold text-[#2E7D32] hover:underline block"
+              className="text-base font-heading font-bold text-[#2E7D32] hover:underline block"
             >
               Chat on WhatsApp ({siteConfig.contact.whatsappDisplay})
             </a>
+            <span className="text-[11px] text-secondary-text block mt-0.5">
+              Fast Location &amp; Quotation Response
+            </span>
           </div>
         </Card>
       </div>
 
       {/* Business Location & Driving Directions */}
-      <Card surface="white" className="space-y-5 p-6 sm:p-8 border-2 border-border-subtle">
+      <Card surface="white" className="space-y-5 p-6 sm:p-8 border border-border-subtle shadow-2xs">
         <div className="border-b border-border-subtle pb-4">
-          <Badge variant="terracotta" size="sm">
+          <span className="text-[10px] font-heading uppercase tracking-wider font-semibold text-terracotta bg-white px-2.5 py-0.5 border border-border-subtle">
             Manufacturing Facility
-          </Badge>
-          <h3 className="font-heading font-bold text-xl text-charcoal mt-1.5">
+          </span>
+          <h3 className="font-heading font-bold text-xl text-charcoal mt-2">
             {siteConfig.name}
           </h3>
           <p className="text-xs text-secondary-text mt-0.5">
@@ -82,7 +83,7 @@ export default function ContactInformation({ className = "" }) {
           </p>
         </div>
 
-        <div className="space-y-3 text-xs sm:text-sm text-secondary-text">
+        <div className="space-y-3.5 text-xs sm:text-sm text-secondary-text">
           <div className="flex items-start gap-3">
             <MapPin className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
             <div>
@@ -105,10 +106,10 @@ export default function ContactInformation({ className = "" }) {
           <div className="flex items-start gap-3">
             <Mail className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
             <div>
-              <strong className="text-charcoal block">Email:</strong>
+              <strong className="text-charcoal block">Email Address:</strong>
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="text-terracotta hover:underline"
+                className="text-charcoal hover:text-terracotta hover:underline"
               >
                 {siteConfig.contact.email}
               </a>
@@ -116,19 +117,26 @@ export default function ContactInformation({ className = "" }) {
           </div>
         </div>
 
-        <div className="pt-3 border-t border-border-subtle flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-          <span className="text-xs text-secondary-text">
-            Visiting the facility? Get road directions:
-          </span>
+        {/* Action Button: Get Directions */}
+        <div className="pt-2 border-t border-border-subtle flex flex-col sm:flex-row gap-3">
           <Button
             href={siteConfig.location.directionsUrl}
-            variant="primary"
-            size="sm"
-            iconRight={Navigation}
+            variant="outline"
+            size="md"
+            iconLeft={Navigation}
             target="_blank"
             rel="noopener noreferrer"
+            className="border-sandstone/60 text-charcoal hover:bg-warm-bg"
           >
             Get Driving Directions
+          </Button>
+
+          <Button
+            href="/order"
+            variant="primary"
+            size="md"
+          >
+            Submit Bulk Order Request
           </Button>
         </div>
       </Card>

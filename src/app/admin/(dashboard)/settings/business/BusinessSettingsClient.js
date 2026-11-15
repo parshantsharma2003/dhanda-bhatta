@@ -216,7 +216,7 @@ export default function BusinessSettingsClient({ initialSettings }) {
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              placeholder="+919812000000"
+              placeholder="+919996669463"
               className="w-full px-3 py-2 bg-warm-bg border border-border-subtle font-mono text-xs text-charcoal focus:bg-white focus:outline-none focus:border-terracotta"
             />
           </div>
@@ -230,7 +230,7 @@ export default function BusinessSettingsClient({ initialSettings }) {
               required
               value={formData.phoneDisplay}
               onChange={(e) => setFormData({ ...formData, phoneDisplay: e.target.value })}
-              placeholder="+91 98120 00000"
+              placeholder="+91 99966-69463"
               className="w-full px-3 py-2 bg-warm-bg border border-border-subtle text-xs text-charcoal focus:bg-white focus:outline-none focus:border-terracotta"
             />
           </div>
@@ -244,7 +244,7 @@ export default function BusinessSettingsClient({ initialSettings }) {
               required
               value={formData.whatsappNumber}
               onChange={(e) => setFormData({ ...formData, whatsappNumber: e.target.value })}
-              placeholder="919812000000"
+              placeholder="918295669463"
               className="w-full px-3 py-2 bg-warm-bg border border-border-subtle font-mono text-xs text-charcoal focus:bg-white focus:outline-none focus:border-terracotta"
             />
           </div>

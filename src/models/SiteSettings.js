@@ -22,7 +22,7 @@ const SiteSettingsSchema = new mongoose.Schema(
       phone: { type: String, default: "+919996669463" },
       phoneDisplay: { type: String, default: "+91 99966-69463" },
       whatsappNumber: { type: String, default: "918295669463" },
-      email: { type: String, default: "contact@dhandabhatta.com" },
+      email: { type: String, default: "contact@dhandabhattacompany.com" },
       googleMapsUrl: {
         type: String,
         default: "https://share.google/60pwtYCEIZ6sF7aGz",
