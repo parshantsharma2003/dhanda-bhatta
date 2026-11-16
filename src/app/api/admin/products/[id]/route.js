@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { requireAdmin } from "@/lib/server/requireAdmin";
 import connectToDatabase from "@/lib/db";
@@ -139,6 +140,16 @@ export async function PUT(request, context) {
       details: { action: "PRODUCT_UPDATED", productId: id, slug: existing.slug },
     });
 
+    try {
+      revalidatePath("/products");
+      revalidatePath("/");
+      if (existing.slug) {
+        revalidatePath(`/products/${existing.slug}`);
+      }
+    } catch (e) {
+      console.warn("[revalidatePath] Error invalidating product cache:", e.message);
+    }
+
     return NextResponse.json({
       success: true,
       message: "Product updated successfully",
@@ -193,6 +204,16 @@ export async function DELETE(request, context) {
         historicalOrderReferences: historicalOrderCount,
       },
     });
+
+    try {
+      revalidatePath("/products");
+      revalidatePath("/");
+      if (product.slug) {
+        revalidatePath(`/products/${product.slug}`);
+      }
+    } catch (e) {
+      console.warn("[revalidatePath] Error invalidating product cache:", e.message);
+    }
 
     return NextResponse.json({
       success: true,

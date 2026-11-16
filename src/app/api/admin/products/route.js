@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { requireAdmin } from "@/lib/server/requireAdmin";
 import connectToDatabase from "@/lib/db";
@@ -179,6 +180,17 @@ export async function POST(request) {
       headers: request.headers,
       details: { action: "PRODUCT_CREATED", productId: newProduct._id.toString(), slug: newProduct.slug },
     });
+
+    // Invalidate public page caches so changes appear immediately
+    try {
+      revalidatePath("/products");
+      revalidatePath("/");
+      if (newProduct.slug) {
+        revalidatePath(`/products/${newProduct.slug}`);
+      }
+    } catch (e) {
+      console.warn("[revalidatePath] Error invalidating product cache:", e.message);
+    }
 
     return NextResponse.json(
       {

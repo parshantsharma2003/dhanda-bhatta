@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { requireAdmin } from "@/lib/server/requireAdmin";
 import connectToDatabase from "@/lib/db";
@@ -117,6 +118,13 @@ export async function POST(request) {
       headers: request.headers,
       details: { action: "GALLERY_CREATED", assetId: newAsset._id.toString(), title: newAsset.title },
     });
+
+    try {
+      revalidatePath("/gallery");
+      revalidatePath("/");
+    } catch (e) {
+      console.warn("[revalidatePath] Error invalidating gallery cache:", e.message);
+    }
 
     return NextResponse.json(
       {

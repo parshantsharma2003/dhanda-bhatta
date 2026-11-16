@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MobileContactBar from "@/components/layout/MobileContactBar";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { siteConfig } from "@/config/site";
 import { getSiteUrl, TARGET_KEYWORDS } from "@/lib/seo";
 
@@ -11,14 +12,12 @@ const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-archivo",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 const siteUrl = getSiteUrl();
@@ -101,6 +100,7 @@ export default function RootLayout({ children }) {
         <main className="flex-1 w-full">{children}</main>
         <Footer />
         <MobileContactBar />
+        <SpeedInsights />
       </body>
     </html>
   );

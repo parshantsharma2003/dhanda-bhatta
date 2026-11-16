@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { requireAdmin } from "@/lib/server/requireAdmin";
 import connectToDatabase from "@/lib/db";
@@ -121,6 +122,12 @@ export async function PUT(request) {
       headers: request.headers,
       details: { action: "SETTINGS_UPDATED" },
     });
+
+    try {
+      revalidatePath("/", "layout");
+    } catch (e) {
+      console.warn("[revalidatePath] Error invalidating settings cache:", e.message);
+    }
 
     return NextResponse.json({
       success: true,

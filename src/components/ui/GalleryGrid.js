@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Camera, Eye } from "lucide-react";
 import Badge from "./Badge";
-import GalleryLightbox from "./GalleryLightbox";
 import VideoThumbnail from "./VideoThumbnail";
 import { cn } from "@/lib/utils";
+
+const GalleryLightbox = dynamic(() => import("./GalleryLightbox"), {
+  ssr: false,
+});
 
 /**
  * Responsive GalleryGrid with category filter tabs and interactive lightbox modal.

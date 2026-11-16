@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/server/requireAdmin";
 import connectToDatabase from "@/lib/db";
 import SiteContent from "@/models/SiteContent";
@@ -75,6 +76,21 @@ export async function PUT(request, context) {
         key,
       },
     });
+
+    if (publish) {
+      try {
+        if (key === "homepage") {
+          revalidatePath("/");
+        } else if (key === "about") {
+          revalidatePath("/about");
+        } else {
+          revalidatePath("/");
+          revalidatePath(`/${key}`);
+        }
+      } catch (e) {
+        console.warn("[revalidatePath] Error invalidating content cache:", e.message);
+      }
+    }
 
     return NextResponse.json({
       success: true,

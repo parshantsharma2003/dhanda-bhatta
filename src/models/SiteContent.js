@@ -42,6 +42,8 @@ const SiteContentSchema = new mongoose.Schema(
   }
 );
 
+SiteContentSchema.index({ key: 1, status: 1 });
+
 const SiteContent =
   mongoose.models.SiteContent || mongoose.model("SiteContent", SiteContentSchema);
 

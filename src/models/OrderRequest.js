@@ -207,6 +207,7 @@ const OrderRequestSchema = new mongoose.Schema(
 OrderRequestSchema.index({ normalizedPhone: 1, createdAt: -1 });
 OrderRequestSchema.index({ status: 1, createdAt: -1 });
 OrderRequestSchema.index({ isArchived: 1, createdAt: -1 });
+OrderRequestSchema.index({ isArchived: 1, status: 1 });
 
 const OrderRequest =
   mongoose.models.OrderRequest || mongoose.model("OrderRequest", OrderRequestSchema);

@@ -17,6 +17,7 @@
   "dependencies": {
     "@hookform/resolvers": "^7.0.6",
     "@node-rs/argon2": "^2.2.2",
+    "@vercel/speed-insights": "^2.1.0",
     "better-auth": "^1.7.25",
     "cloudinary": "^2.11.0",
     "lucide-react": "^1.73.0",

@@ -12,7 +12,8 @@ import { siteConfig } from "@/config/site";
 import { getCmsContent } from "@/lib/server/getCmsContent";
 import { generatePageMetadata, generateBreadcrumbSchema } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+// Incremental Static Regeneration (ISR) with 5-minute background refresh
+export const revalidate = 300;
 
 export const metadata = generatePageMetadata({
   title: "About Our Bhatta | Brick Manufacturing in Kalwa, Jind",

@@ -1,7 +1,8 @@
 import { getSiteUrl } from "@/lib/seo";
 import { getPublishedProducts } from "@/services/productService";
 
-export const dynamic = "force-dynamic";
+// Cache sitemap and revalidate once every 24 hours
+export const revalidate = 86400;
 
 /**
  * Dynamic Next.js Sitemap Generator (src/app/sitemap.js)

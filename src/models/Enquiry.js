@@ -141,6 +141,7 @@ const EnquirySchema = new mongoose.Schema(
 EnquirySchema.index({ normalizedPhone: 1, createdAt: -1 });
 EnquirySchema.index({ status: 1, createdAt: -1 });
 EnquirySchema.index({ isArchived: 1, createdAt: -1 });
+EnquirySchema.index({ isArchived: 1, status: 1 });
 
 const Enquiry = mongoose.models.Enquiry || mongoose.model("Enquiry", EnquirySchema);
 

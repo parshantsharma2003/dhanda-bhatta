@@ -21,7 +21,8 @@ export const metadata = generatePageMetadata({
   ],
 });
 
-export const dynamic = "force-dynamic";
+// Incremental Static Regeneration (ISR) with 5-minute background refresh
+export const revalidate = 300;
 
 export default async function GalleryPage() {
   const { items } = await getPublishedGalleryAssets();

@@ -19,7 +19,8 @@ export const metadata = generatePageMetadata({
   ],
 });
 
-export const dynamic = "force-dynamic";
+// Incremental Static Regeneration (ISR) with 5-minute background refresh
+export const revalidate = 300;
 
 export default async function ProductsPage() {
   const { products } = await getPublishedProducts();

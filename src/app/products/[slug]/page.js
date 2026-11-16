@@ -17,6 +17,9 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/seo";
 
+// Enable Incremental Static Regeneration (ISR) with 5-minute background refresh
+export const revalidate = 300;
+
 export async function generateStaticParams() {
   const { products } = await getPublishedProducts();
   return products.map((product) => ({
