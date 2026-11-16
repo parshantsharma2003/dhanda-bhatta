@@ -45,6 +45,9 @@ export default async function ProductsPage() {
 
       <section className="py-12 sm:py-16 bg-white border-b border-border-subtle">
         <PageContainer>
+          {/* Accessible section heading for product catalog */}
+          <h2 className="sr-only">Available Brick Varieties</h2>
+
           {/* Product Grid with Live Search & Category Filtering */}
           <ProductGrid
             products={products}
@@ -58,21 +61,21 @@ export default async function ProductsPage() {
               <span className="text-[11px] font-heading font-bold uppercase tracking-wider text-terracotta">
                 Direct Kiln Supply
               </span>
-              <h4 className="font-heading font-bold text-base text-charcoal">
+              <h3 className="font-heading font-bold text-base text-charcoal">
                 Factory Gate Rates
-              </h4>
+              </h3>
               <p className="text-xs text-secondary-text leading-relaxed">
                 Bricks are supplied directly from our facility in Village Kalwa, ensuring transparent pricing and straightforward communication.
               </p>
             </div>
 
             <div className="space-y-1.5">
-              <span className="text-[11px] font-heading font-bold uppercase tracking-wider text-sandstone">
+              <span className="text-[11px] font-heading font-bold uppercase tracking-wider text-sandstone-text">
                 Nearby Area Delivery
               </span>
-              <h4 className="font-heading font-bold text-base text-charcoal">
+              <h3 className="font-heading font-bold text-base text-charcoal">
                 Direct Site Haulage
-              </h4>
+              </h3>
               <p className="text-xs text-secondary-text leading-relaxed">
                 We coordinate transportation to building sites across Jind and surrounding areas according to your project schedule.
               </p>
@@ -82,9 +85,9 @@ export default async function ProductsPage() {
               <span className="text-[11px] font-heading font-bold uppercase tracking-wider text-charcoal">
                 Volume Planning
               </span>
-              <h4 className="font-heading font-bold text-base text-charcoal">
+              <h3 className="font-heading font-bold text-base text-charcoal">
                 Commercial Enquiries
-              </h4>
+              </h3>
               <p className="text-xs text-secondary-text leading-relaxed">
                 Contractors, builders and homeowners can discuss staged supply schedules to keep active masonry work moving smoothly.
               </p>

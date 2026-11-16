@@ -38,9 +38,9 @@ export default async function ProductShowcase() {
         {/* Bottom Project Enquiries Strip */}
         <div className="mt-10 sm:mt-12 p-6 bg-warm-bg border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <h4 className="font-heading font-bold text-sm sm:text-base text-charcoal">
+            <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal">
               Planning a construction project in Jind or nearby areas?
-            </h4>
+            </h3>
             <p className="text-xs text-secondary-text">
               Get in touch with our team to discuss delivery schedules, site access and volume requirements.
             </p>

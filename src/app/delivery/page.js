@@ -150,7 +150,7 @@ export default function DeliveryPage() {
                   className="bg-warm-bg/50 border border-border-subtle p-6 flex flex-col justify-between space-y-4 shadow-2xs hover:border-sandstone hover:bg-white transition-all"
                 >
                   <div className="space-y-2">
-                    <span className="font-heading font-extrabold text-2xl text-sandstone">
+                    <span className="font-heading font-extrabold text-2xl text-sandstone-text">
                       {item.step}
                     </span>
                     <h3 className="font-heading font-bold text-base text-charcoal">

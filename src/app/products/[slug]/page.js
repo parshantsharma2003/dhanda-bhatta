@@ -161,9 +161,9 @@ export default async function ProductDetailPage({ params }) {
               {/* Verified Applications List */}
               {product.applications && product.applications.length > 0 && (
                 <div className="space-y-2 pt-2 border-t border-border-subtle">
-                  <h3 className="font-heading text-xs uppercase tracking-wider font-bold text-charcoal">
+                  <h2 className="font-heading text-xs uppercase tracking-wider font-bold text-charcoal">
                     Recommended Masonry Applications:
-                  </h3>
+                  </h2>
                   <ul className="space-y-1.5 text-xs sm:text-sm text-secondary-text">
                     {product.applications.map((app) => (
                       <li key={app} className="flex items-start gap-2">
@@ -179,9 +179,9 @@ export default async function ProductDetailPage({ params }) {
               {product.specifications && product.specifications.length > 0 && (
                 <div className="space-y-3 pt-3 border-t border-border-subtle">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-heading text-xs uppercase tracking-wider font-bold text-charcoal">
+                    <h2 className="font-heading text-xs uppercase tracking-wider font-bold text-charcoal">
                       Verified Product Details
-                    </h3>
+                    </h2>
                     <span className="text-[11px] text-secondary-text">Facility Standard</span>
                   </div>
 

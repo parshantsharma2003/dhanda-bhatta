@@ -40,7 +40,7 @@ export default function DeliveryInformation({ className = "" }) {
             className="bg-white border border-border-subtle p-6 flex flex-col justify-between space-y-4 shadow-2xs hover:border-sandstone transition-colors"
           >
             <div className="space-y-2">
-              <span className="font-heading font-extrabold text-2xl text-sandstone">
+              <span className="font-heading font-extrabold text-2xl text-sandstone-text">
                 {item.step}
               </span>
               <h3 className="font-heading font-bold text-base text-charcoal">

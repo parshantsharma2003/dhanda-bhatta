@@ -25,6 +25,7 @@ export default function HeroSection({ cmsData = null }) {
           src={bannerImage}
           alt="Dhanda Bhatta Company brick kiln chimney and facility at Village Kalwa, Pillukhera, Jind"
           priority
+          fetchPriority="high"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           className="object-cover object-[center_30%] md:object-[center_25%]"
@@ -33,7 +34,7 @@ export default function HeroSection({ cmsData = null }) {
         {/* 2. Carefully Designed Dark Gradient Overlay for Maximum Readability */}
         {/* Mobile: Strong gradient from solid charcoal at bottom to dark veil at top */}
         <div
-          className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/90 via-50% to-charcoal/45 lg:hidden"
+          className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/95 via-50% to-charcoal/75 lg:hidden"
           aria-hidden="true"
         />
 
@@ -91,12 +92,12 @@ export default function HeroSection({ cmsData = null }) {
           </div>
 
           {/* Verified Location & Delivery Note */}
-          <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-warm-bg/75">
+          <div className="pt-4 border-t border-white/20 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-warm-bg/90">
             <span className="inline-flex items-center gap-1.5 text-sandstone">
               <MapPin className="w-3.5 h-3.5 shrink-0" />
               <span>Village Kalwa, Pillukhera (Jind)</span>
             </span>
-            <span className="text-white/30 hidden sm:inline">•</span>
+            <span className="text-white/60 hidden sm:inline">•</span>
             <span>Delivery available in nearby areas</span>
           </div>
         </div>

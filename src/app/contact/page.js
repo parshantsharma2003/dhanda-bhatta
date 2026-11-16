@@ -45,6 +45,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             {/* Left Column: Reusable Contact Channels & Verified Details */}
             <div className="lg:col-span-7 space-y-8">
+              <h2 className="sr-only">Direct Kiln Contact Channels</h2>
               <ContactInformation />
 
               {/* Verified Social Media Links */}
@@ -132,9 +133,9 @@ export default function ContactPage() {
               <Card surface="white" className="space-y-3 p-5 sm:p-6 shadow-2xs">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-terracotta shrink-0" />
-                  <h4 className="font-heading font-bold text-sm sm:text-base text-charcoal">
+                  <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal">
                     Facility Batch Inspection
-                  </h4>
+                  </h3>
                 </div>
                 <p className="text-xs sm:text-sm text-secondary-text leading-relaxed">
                   Contractors and home builders are welcome to inspect brick stacks firsthand at our Kalwa

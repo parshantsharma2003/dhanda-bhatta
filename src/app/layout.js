@@ -53,7 +53,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/images/facility/kiln-hero.webp`,
+        url: `${siteUrl}/images/facility/kiln-hero.jpg`,
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - Brick Kiln in Kalwa, Jind`,
@@ -64,7 +64,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Brick Manufacturer in Jind, Haryana`,
     description: siteConfig.description,
-    images: [`${siteUrl}/images/facility/kiln-hero.webp`],
+    images: [`${siteUrl}/images/facility/kiln-hero.jpg`],
   },
   robots: {
     index: true,

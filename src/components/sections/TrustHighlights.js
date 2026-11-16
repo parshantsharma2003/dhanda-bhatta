@@ -44,9 +44,9 @@ export default function TrustHighlights() {
                   <Icon className="w-4 h-4" strokeWidth={1.75} />
                 </div>
                 <div className="space-y-0.5">
-                  <h3 className="font-heading font-bold text-sm sm:text-base text-charcoal tracking-tight">
+                  <h2 className="font-heading font-bold text-sm sm:text-base text-charcoal tracking-tight">
                     {item.title}
-                  </h3>
+                  </h2>
                   <p className="text-xs sm:text-sm text-secondary-text leading-relaxed">
                     {item.description}
                   </p>

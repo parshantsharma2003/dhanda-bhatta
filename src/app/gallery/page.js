@@ -73,9 +73,9 @@ export default async function GalleryPage() {
               <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-terracotta">
                 On-Site Experience
               </span>
-              <h3 className="font-heading font-bold text-lg sm:text-xl text-charcoal">
+              <h2 className="font-heading font-bold text-lg sm:text-xl text-charcoal">
                 Want to observe continuous kiln firing in person?
-              </h3>
+              </h2>
               <p className="text-xs sm:text-sm text-secondary-text max-w-xl">
                 We welcome builders, contractors, and civil engineers to visit our kiln grounds in Village Kalwa,
                 Pillukhera to inspect currently stacked batches.

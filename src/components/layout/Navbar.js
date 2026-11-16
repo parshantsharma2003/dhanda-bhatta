@@ -1,15 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone } from "lucide-react";
-import MobileMenu from "./MobileMenu";
 import PageContainer from "./PageContainer";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 import { navigationConfig } from "@/config/navigation";
 import { cn } from "@/lib/utils";
+
+const MobileMenu = dynamic(() => import("./MobileMenu"), {
+  ssr: false,
+});
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

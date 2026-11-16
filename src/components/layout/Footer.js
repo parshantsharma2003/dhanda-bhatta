@@ -47,7 +47,7 @@ export default function Footer() {
               </div>
 
               {/* Business Description */}
-              <p className="text-xs sm:text-sm text-warm-bg/75 leading-relaxed max-w-sm">
+              <p className="text-xs sm:text-sm text-warm-bg/90 leading-relaxed max-w-sm">
                 Brick manufacturing and supply business based in Village Kalwa, Pillukhera, Jind,
                 Haryana. Quality red clay bricks for residential and commercial construction with
                 delivery available in nearby areas.
@@ -142,7 +142,7 @@ export default function Footer() {
                 <p className="font-heading text-xs uppercase tracking-widest font-semibold text-sandstone">
                   Explore
                 </p>
-                <ul className="space-y-2 text-xs sm:text-sm text-warm-bg/75">
+                <ul className="space-y-2 text-xs sm:text-sm text-warm-bg/90">
                   <li>
                     <Link href="/" className="hover:text-white transition-colors block py-0.5">
                       Home
@@ -171,7 +171,7 @@ export default function Footer() {
                 <p className="font-heading text-xs uppercase tracking-widest font-semibold text-sandstone">
                   Orders &amp; Service
                 </p>
-                <ul className="space-y-2 text-xs sm:text-sm text-warm-bg/75">
+                <ul className="space-y-2 text-xs sm:text-sm text-warm-bg/90">
                   <li>
                     <Link href="/delivery" className="hover:text-white transition-colors block py-0.5">
                       Nearby Delivery
@@ -200,12 +200,12 @@ export default function Footer() {
       </div>
 
       {/* Copyright Strip */}
-      <div className="border-t border-charcoal-muted py-5 text-xs text-warm-bg/60 bg-[#191817]">
+      <div className="border-t border-charcoal-muted py-5 text-xs text-warm-bg/85 bg-[#191817]">
         <PageContainer className="flex flex-col sm:flex-row items-center justify-between gap-2.5 text-center sm:text-left">
           <p>
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
           </p>
-          <p className="text-[11px] text-warm-bg/40">
+          <p className="text-[11px] text-warm-bg/80">
             Village Kalwa, Pillukhera, Jind, Haryana &middot; Nearby area delivery available
           </p>
         </PageContainer>

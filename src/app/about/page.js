@@ -186,7 +186,7 @@ export default async function AboutPage() {
                     <div className="w-10 h-10 border border-sandstone/50 bg-warm-bg flex items-center justify-center text-terracotta">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-heading font-bold text-sandstone uppercase tracking-widest block">
+                    <span className="text-[10px] font-heading font-bold text-sandstone-text uppercase tracking-widest block">
                       Standard 0{idx + 1}
                     </span>
                     <h3 className="font-heading font-bold text-base text-charcoal">
