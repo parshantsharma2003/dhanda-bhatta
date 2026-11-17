@@ -24,7 +24,7 @@ const siteUrl = getSiteUrl();
 const googleVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
   process.env.GOOGLE_SITE_VERIFICATION ||
-  undefined;
+  "GPXdLVfz7VrN1GQvtheZckmthkPYJKhFporw7MmlKDk";
 
 export const metadata = {
   title: {
@@ -77,11 +77,9 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  verification: googleVerification
-    ? {
-        google: googleVerification,
-      }
-    : undefined,
+  verification: {
+    google: googleVerification,
+  },
 };
 
 export const viewport = {
